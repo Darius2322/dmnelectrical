@@ -21,7 +21,9 @@
             --electric-yellow: #FFEE58;
             --spark-blue: #4A90E2;
             --spark-orange: #FF6B35;
-            --contact-bg: #2C3E50; /* New background color for contact section */
+            --contact-bg: #2C3E50;
+            --problem-solver-bg: #8B0000;
+            --problem-solver-light: #a52a2a;
         }
         
         * {
@@ -35,6 +37,7 @@
             background-color: var(--light);
             color: var(--dark);
             line-height: 1.6;
+            overflow-x: hidden;
         }
         
         .container {
@@ -65,6 +68,31 @@
         .logo {
             display: flex;
             align-items: center;
+        }
+        
+        .logo-img {
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary);
+            border-radius: 50%;
+            margin-right: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--secondary);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .logo-slogan {
+            font-size: 0.8rem;
+            opacity: 0.8;
+            margin-top: 2px;
         }
         
         .logo i {
@@ -127,6 +155,16 @@
             justify-content: center;
             align-items: center;
             font-weight: bold;
+        }
+        
+        /* Mobile Toggle Button */
+        .mobile-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
         }
         
         /* Navigation */
@@ -230,6 +268,7 @@
             cursor: pointer;
             transition: all 0.3s;
             text-decoration: none;
+            font-size: 0.9rem;
         }
         
         .btn:hover {
@@ -382,8 +421,7 @@
         
         .product-actions {
             display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
+            flex-direction: column;
             gap: 10px;
         }
         
@@ -391,14 +429,13 @@
             background-color: var(--secondary);
             color: white;
             border: none;
-            padding: 8px 15px;
+            padding: 10px 15px;
             border-radius: 5px;
             cursor: pointer;
             transition: background-color 0.3s;
             display: flex;
             align-items: center;
             gap: 5px;
-            flex: 1;
             justify-content: center;
         }
         
@@ -410,14 +447,13 @@
             background-color: var(--electric-blue);
             color: white;
             border: none;
-            padding: 8px 15px;
+            padding: 10px 15px;
             border-radius: 5px;
             cursor: pointer;
             transition: background-color 0.3s;
             display: flex;
             align-items: center;
             gap: 5px;
-            flex: 1;
             justify-content: center;
         }
         
@@ -429,16 +465,14 @@
             background-color: var(--warning);
             color: var(--dark);
             border: none;
-            padding: 8px 15px;
+            padding: 10px 15px;
             border-radius: 5px;
             cursor: pointer;
             transition: background-color 0.3s;
             display: flex;
             align-items: center;
             gap: 5px;
-            flex: 1;
             justify-content: center;
-            margin-top: 10px;
         }
         
         .notify-btn:hover {
@@ -526,6 +560,7 @@
             justify-content: center;
             margin-bottom: 30px;
             gap: 10px;
+            flex-wrap: wrap;
         }
         
         .gallery-tab {
@@ -594,7 +629,23 @@
         /* Problem Solver Section */
         .problem-solver {
             padding: 70px 0;
-            background-color: var(--electric-blue);
+            background: linear-gradient(135deg, var(--problem-solver-bg) 0%, var(--problem-solver-light) 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .problem-solver::before {
+            content: "\f0e7";
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 20rem;
+            opacity: 0.05;
+            z-index: 0;
             color: white;
         }
         
@@ -605,6 +656,8 @@
             padding: 30px;
             border-radius: 10px;
             backdrop-filter: blur(5px);
+            position: relative;
+            z-index: 1;
         }
         
         .form-group {
@@ -659,6 +712,8 @@
         .photo-actions, .video-actions {
             display: flex;
             gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
         }
         
         /* Quotation Section */
@@ -1045,69 +1100,70 @@
         }
         
      /* Search Results */
-.search-results {
-    display: none;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    max-height: 300px;
-    overflow-y: auto;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    z-index: 100;
-}
+    .search-results {
+        display: none;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        max-height: 300px;
+        overflow-y: auto;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        z-index: 100;
+    }
 
-.search-result-item {
-    padding: 12px 15px;
-    border-bottom: 1px solid #eee;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    color: var(--dark);
-    background-color: white;
-    transition: background-color 0.3s;
-}
+    .search-result-item {
+        padding: 12px 15px;
+        border-bottom: 1px solid #eee;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        color: var(--dark);
+        background-color: white;
+        transition: background-color 0.3s;
+    }
 
-.search-result-item:hover {
-    background-color: #f5f5f5;
-}
+    .search-result-item:hover {
+        background-color: #f5f5f5;
+    }
 
-.search-result-item:last-child {
-    border-bottom: none;
-}
+    .search-result-item:last-child {
+        border-bottom: none;
+    }
 
-.search-result-icon {
-    font-size: 1.2rem;
-    color: var(--secondary);
-    flex-shrink: 0;
-}
+    .search-result-icon {
+        font-size: 1.2rem;
+        color: var(--secondary);
+        flex-shrink: 0;
+    }
 
-.search-result-item > div {
-    flex: 1;
-}
+    .search-result-item > div {
+        flex: 1;
+    }
 
-.search-result-item h4 {
-    color: var(--dark);
-    margin-bottom: 4px;
-    font-size: 1rem;
-    font-weight: 600;
-}
+    .search-result-item h4 {
+        color: var(--dark);
+        margin-bottom: 4px;
+        font-size: 1rem;
+        font-weight: 600;
+    }
 
-.search-result-item p {
-    color: var(--gray);
-    font-size: 0.85rem;
-    margin-bottom: 4px;
-    line-height: 1.4;
-}
+    .search-result-item p {
+        color: var(--gray);
+        font-size: 0.85rem;
+        margin-bottom: 4px;
+        line-height: 1.4;
+    }
 
-.search-result-item small {
-    color: var(--secondary);
-    font-weight: 500;
-    font-size: 0.8rem;
-}
+    .search-result-item small {
+        color: var(--secondary);
+        font-weight: 500;
+        font-size: 0.8rem;
+    }
+        
         /* Scroll to top button */
         .scroll-top {
             position: fixed;
@@ -1140,19 +1196,42 @@
         }
         
         /* Responsive Design */
+        @media (max-width: 1024px) {
+            .hero h2 {
+                font-size: 2.5rem;
+            }
+            
+            .products-grid, .services-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+        }
+        
         @media (max-width: 768px) {
             .header-content {
                 flex-direction: column;
                 gap: 15px;
             }
             
-            .search-box {
-                width: 100%;
+            .mobile-toggle {
+                display: block;
+                position: absolute;
+                top: 15px;
+                right: 15px;
             }
             
             .nav-links {
-                flex-wrap: wrap;
-                gap: 15px;
+                display: none;
+                flex-direction: column;
+                gap: 10px;
+                width: 100%;
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .search-box {
+                width: 100%;
             }
             
             .hero h2 {
@@ -1184,9 +1263,34 @@
                 flex-direction: column;
                 gap: 0;
             }
+            
+            /* Mobile product/service display */
+            .products-grid, .services-grid {
+                grid-template-columns: 1fr;
+            }
         }
         
         @media (max-width: 480px) {
+            .logo h1 {
+                font-size: 1.5rem;
+            }
+            
+            .logo-slogan {
+                font-size: 0.7rem;
+            }
+            
+            .hero h2 {
+                font-size: 1.8rem;
+            }
+            
+            .hero p {
+                font-size: 0.9rem;
+            }
+            
+            .section-title {
+                font-size: 1.6rem;
+            }
+            
             .products-grid {
                 grid-template-columns: 1fr;
             }
@@ -1202,6 +1306,10 @@
             .service-actions {
                 flex-direction: column;
             }
+            
+            .photo-actions, .video-actions {
+                flex-direction: column;
+            }
         }
         
         /* Animation for electric effect */
@@ -1215,35 +1323,7 @@
             animation: electricPulse 2s infinite;
         }
         
-        /* Toggle buttons for small screens */
-        .mobile-toggle {
-            display: none;
-            background: var(--secondary);
-            color: white;
-            border: none;
-            padding: 10px 15px;
-            border-radius: 5px;
-            margin: 10px 0;
-            cursor: pointer;
-            width: 100%;
-            text-align: center;
-        }
-        
-        @media (max-width: 768px) {
-            .mobile-toggle {
-                display: block;
-            }
-            
-            .toggle-content {
-                display: none;
-            }
-            
-            .toggle-content.active {
-                display: block;
-            }
-        }
-        
-        /* Custom dropdown styling */
+        /* Custom dropdown styling - FIXED */
         .custom-dropdown {
             position: relative;
             width: 100%;
@@ -1256,64 +1336,68 @@
             background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
             background-repeat: no-repeat;
             background-position: right 15px center;
-            background-size: 16px;
+            background-size: 15px;
             padding-right: 40px;
+            color: white;
         }
         
+        /* Fix dropdown options visibility */
+        .custom-dropdown select option {
+            background-color: white;
+            color: var(--dark);
+            padding: 10px;
+        }
+        
+        /* Change text color when focused/selected */
+        .custom-dropdown select:focus,
+        .custom-dropdown select:valid {
+            color: var(--dark);
+            background-color: rgba(255,255,255,0.9);
+        }
+        
+        /* Camera interface styling */
+        .camera-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        #camera-preview {
+            width: 100%;
+            max-width: 400px;
+            height: 300px;
+            background-color: #000;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        #camera-preview video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .camera-controls {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        #captured-image {
+            max-width: 100%;
+            max-height: 300px;
+            border-radius: 10px;
+            display: none;
+        }
+        
+        /* Other input field */
         .other-input {
             margin-top: 10px;
             display: none;
         }
-        /* Fix dropdown text visibility */
-.custom-dropdown select option {
-    background-color: white;
-    color: var(--dark);
-}
-
-/* Ensure the dropdown itself has proper styling */
-.custom-dropdown select {
-    color: white;
-}
-
-.custom-dropdown select:focus {
-    color: var(--dark);
-}
-/* Custom dropdown styling */
-.custom-dropdown {
-    position: relative;
-    width: 100%;
-}
-
-.custom-dropdown select {
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
-    background-repeat: no-repeat;
-    background-position: right 15px center;
-    background-size: 16px;
-    padding-right: 40px;
-    color: white;
-}
-
-/* Fix for dropdown options visibility */
-.custom-dropdown select option {
-    background-color: white;
-    color: var(--dark);
-    padding: 10px;
-}
-
-/* Change text color when focused/selected */
-.custom-dropdown select:focus,
-.custom-dropdown select:valid {
-    color: var(--dark);
-    background-color: rgba(255,255,255,0.9);
-}
-
-.other-input {
-    margin-top: 10px;
-    display: none;
-}
         
         /* Developer contact section */
         .developer-contact-info {
@@ -1343,12 +1427,21 @@
         <div class="container">
             <div class="header-content">
                 <div class="logo">
-                    <i class="fas fa-bolt electric-text"></i>
-                    <h1>Iggy Power Solutions</h1>
+                    <div class="logo-img">
+                        <!-- EDITABLE: Logo Image -->
+                        <!-- Replace this div with your logo image -->
+                        <!-- <img src="your-logo.png" alt="Iggy Power Solutions" style="width: 100%; height: 100%; object-fit: contain;"> -->
+                        IPS
+                    </div>
+                    <div class="logo-text">
+                        <h1>Iggy Power Solutions</h1>
+                        <!-- EDITABLE: Slogan -->
+                        <div class="logo-slogan">Powering Your World with Reliable Energy Solutions</div>
+                    </div>
                 </div>
                 <div class="search-cart">
                     <div class="search-box">
-                        <input type="text" id="search-input" placeholder="Search for products and services...">
+                        <input type="text" id="search-input" placeholder="Search products, services...">
                         <i class="fas fa-search"></i>
                         <div class="search-results" id="search-results"></div>
                     </div>
@@ -1356,43 +1449,50 @@
                         <i class="fas fa-shopping-cart"></i>
                         <span class="cart-count">0</span>
                     </div>
+                    <button class="mobile-toggle" id="mobile-toggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
                 </div>
             </div>
         </div>
     </header>
-    
+
     <!-- Navigation -->
     <nav>
         <div class="container">
-            <ul class="nav-links">
-                <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
                 <li><a href="#products"><i class="fas fa-box"></i> Products</a></li>
                 <li><a href="#services"><i class="fas fa-tools"></i> Services</a></li>
                 <li><a href="#gallery"><i class="fas fa-images"></i> Gallery</a></li>
-                <li><a href="#problem-solver"><i class="fas fa-lightbulb"></i> Problem Solver</a></li>
-                <li><a href="#quotation"><i class="fas fa-file-invoice-dollar"></i> Get Quote</a></li>
-                <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+                <li><a href="#problem-solver"><i class="fas fa-bolt"></i> Problem Solver</a></li>
+                <li><a href="#quotation"><i class="fas fa-file-invoice-dollar"></i> Quotation</a></li>
+                <li><a href="#contact"><i class="fas fa-phone-alt"></i> Contact</a></li>
             </ul>
         </div>
     </nav>
-    
+
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero" id="home">
         <div class="container">
             <div class="hero-content">
-                <h2>Powering Your World with Quality Electrical Solutions</h2>
-                <p>From premium electrical products to expert installation and maintenance services, Iggy Power Solutions is your trusted partner for all electrical needs.</p>
+                <h2>Powering Your World with <span class="electric-text">Reliable Energy</span></h2>
+                <p>Your trusted partner for quality electrical products, expert services, and innovative power solutions for residential and commercial needs.</p>
                 <a href="#products" class="btn">Explore Products</a>
                 <a href="#services" class="btn btn-secondary">Our Services</a>
                 
                 <div class="hero-features">
                     <div class="hero-feature">
-                        <i class="fas fa-shipping-fast"></i>
-                        <span>Fast Delivery</span>
+                        <i class="fas fa-bolt"></i>
+                        <span>Quality Products</span>
                     </div>
                     <div class="hero-feature">
-                        <i class="fas fa-certificate"></i>
-                        <span>Quality Guaranteed</span>
+                        <i class="fas fa-tools"></i>
+                        <span>Expert Services</span>
+                    </div>
+                    <div class="hero-feature">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Safety First</span>
                     </div>
                     <div class="hero-feature">
                         <i class="fas fa-headset"></i>
@@ -1402,221 +1502,353 @@
             </div>
         </div>
     </section>
-    
+
     <!-- Products Section -->
-    <section id="products" class="products">
+    <section id="products">
         <div class="container">
             <h2 class="section-title">Our Products</h2>
             
             <div class="categories">
                 <button class="category-btn active" data-category="all">All Products</button>
-                <button class="category-btn" data-category="wires">Wires & Cables</button>
-                <button class="category-btn" data-category="switches">Switches & Sockets</button>
-                <button class="category-btn" data-category="lighting">Lighting Solutions</button>
-                <button class="category-btn" data-category="safety">Safety Equipment</button>
+                <button class="category-btn" data-category="solar">Solar Products</button>
+                <button class="category-btn" data-category="inverter">Inverters</button>
+                <button class="category-btn" data-category="battery">Batteries</button>
+                <button class="category-btn" data-category="accessories">Accessories</button>
             </div>
             
             <div class="products-grid">
-                <!-- Product 1 -->
-                <div class="product-card" data-category="wires">
+                <!-- EDITABLE: Product 1 - Out of Stock -->
+                <div class="product-card" data-category="solar">
+                    <div class="product-img">
+                        <i class="fas fa-solar-panel"></i>
+                        <div class="out-of-stock-badge">Out of Stock</div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Solar Panel 300W</h3>
+                        <p>High-efficiency monocrystalline solar panel for residential and commercial use.</p>
+                        <div class="product-price">KSh 45,999</div>
+                        <div class="product-actions">
+                            <button class="notify-btn" data-product="Solar Panel 300W"><i class="fab fa-whatsapp"></i> Notify Me</button>
+                            <button class="detail-btn" data-product="1"><i class="fas fa-info-circle"></i> Details</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- EDITABLE: Product 2 - In Stock -->
+                <div class="product-card" data-category="inverter">
                     <div class="product-img">
                         <i class="fas fa-bolt"></i>
                     </div>
                     <div class="product-info">
-                        <h3>Copper Electrical Wire</h3>
-                        <p>High-quality copper wire for residential and commercial use.</p>
-                        <div class="product-price">KSh 4599</div>
+                        <h3>Power Inverter 2000VA</h3>
+                        <p>Pure sine wave inverter with LCD display and multiple protection features.</p>
+                        <div class="product-price">KSh 24,999</div>
                         <div class="product-actions">
                             <button class="add-to-cart"><i class="fas fa-cart-plus"></i> Add to Cart</button>
-                            <button class="detail-btn" data-id="1"><i class="fas fa-info-circle"></i> Details</button>
+                            <button class="detail-btn" data-product="2"><i class="fas fa-info-circle"></i> Details</button>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Product 2 -->
-                <div class="product-card" data-category="switches">
+                <!-- EDITABLE: Product 3 - In Stock -->
+                <div class="product-card" data-category="battery">
                     <div class="product-img">
-                        <i class="fas fa-toggle-on"></i>
+                        <i class="fas fa-car-battery"></i>
                     </div>
                     <div class="product-info">
-                        <h3>Smart Light Switch</h3>
-                        <p>WiFi enabled smart switch with voice control compatibility.</p>
-                        <div class="product-price">KSh 2499</div>
+                        <h3>Deep Cycle Battery 200AH</h3>
+                        <p>Maintenance-free deep cycle battery for solar and inverter applications.</p>
+                        <div class="product-price">KSh 32,000</div>
                         <div class="product-actions">
                             <button class="add-to-cart"><i class="fas fa-cart-plus"></i> Add to Cart</button>
-                            <button class="detail-btn" data-id="2"><i class="fas fa-info-circle"></i> Details</button>
+                            <button class="detail-btn" data-product="3"><i class="fas fa-info-circle"></i> Details</button>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Product 3 -->
-                <div class="product-card" data-category="lighting">
+                <!-- EDITABLE: Product 4 - Out of Stock -->
+                <div class="product-card" data-category="accessories">
                     <div class="product-img">
-                        <i class="fas fa-lightbulb"></i>
+                        <i class="fas fa-plug"></i>
+                        <div class="out-of-stock-badge">Out of Stock</div>
                     </div>
                     <div class="product-info">
-                        <h3>LED Panel Light</h3>
-                        <p>Energy-efficient LED panel light for offices and homes.</p>
-                        <div class="product-price">KSh 1850</div>
+                        <h3>Solar Charge Controller 40A</h3>
+                        <p>MPPT solar charge controller with Bluetooth monitoring capability.</p>
+                        <div class="product-price">KSh 12,000</div>
                         <div class="product-actions">
-                            <button class="add-to-cart"><i class="fas fa-cart-plus"></i> Add to Cart</button>
-                            <button class="detail-btn" data-id="3"><i class="fas fa-info-circle"></i> Details</button>
+                            <button class="notify-btn" data-product="Solar Charge Controller 40A"><i class="fab fa-whatsapp"></i> Notify Me</button>
+                            <button class="detail-btn" data-product="4"><i class="fas fa-info-circle"></i> Details</button>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Product 4 -->
-                <div class="product-card" data-category="safety">
+                <!-- EDITABLE: Product 5 - In Stock -->
+                <div class="product-card" data-category="solar">
                     <div class="product-img">
-                        <span class="out-of-stock-badge">Out of Stock</span>
-                        <i class="fas fa-fire-extinguisher"></i>
+                        <i class="fas fa-sun"></i>
                     </div>
                     <div class="product-info">
-                        <h3>Electrical Fire Extinguisher</h3>
-                        <p>Specialized fire extinguisher for electrical fires.</p>
-                        <div class="product-price">KSh 8999</div>
+                        <h3>Solar Water Heater 150L</h3>
+                        <p>Efficient solar water heating system with heat retention technology.</p>
+                        <div class="product-price">KSh 85,000</div>
                         <div class="product-actions">
-                            <button class="notify-btn"><i class="fas fa-bell"></i> Notify When Available</button>
-                            <button class="detail-btn" data-id="4"><i class="fas fa-info-circle"></i> Details</button>
+                            <button class="add-to-cart"><i class="fas fa-cart-plus"></i> Add to Cart</button>
+                            <button class="detail-btn" data-product="5"><i class="fas fa-info-circle"></i> Details</button>
                         </div>
                     </div>
                 </div>
+                
+                <!-- EDITABLE: Product 6 - Out of Stock -->
+                <div class="product-card" data-category="inverter">
+                    <div class="product-img">
+                        <i class="fas fa-tachometer-alt"></i>
+                        <div class="out-of-stock-badge">Out of Stock</div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Hybrid Inverter 5KVA</h3>
+                        <p>Advanced hybrid inverter with grid-tie and off-grid capabilities.</p>
+                        <div class="product-price">KSh 89,999</div>
+                        <div class="product-actions">
+                            <button class="notify-btn" data-product="Hybrid Inverter 5KVA"><i class="fab fa-whatsapp"></i> Notify Me</button>
+                            <button class="detail-btn" data-product="6"><i class="fas fa-info-circle"></i> Details</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- EDITABLE: Add more products here -->
+                <!-- Copy the product-card structure above and modify content -->
             </div>
         </div>
     </section>
-    
+
     <!-- Services Section -->
-    <section id="services" class="services">
+    <section class="services" id="services">
         <div class="container">
-            <h2 class="section-title">Our Services</h2>
+            <h2 class="section-title" style="color: white;">Our Services</h2>
             
             <div class="services-grid">
-                <!-- Service 1 -->
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-bolt"></i>
-                    </div>
-                    <h3>Electrical Installation</h3>
-                    <p>Professional installation of electrical systems for homes and businesses.</p>
-                    <div class="service-price">Starting at KSh 1500</div>
-                    <div class="service-actions">
-                        <button class="btn">Book Service</button>
-                        <button class="detail-btn btn-secondary" data-id="1">Details</button>
-                    </div>
-                </div>
-                
-                <!-- Service 2 -->
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-tools"></i>
-                    </div>
-                    <h3>Maintenance & Repair</h3>
-                    <p>Regular maintenance and emergency repair services for electrical systems.</p>
-                    <div class="service-price">Starting at KSh 800</div>
-                    <div class="service-actions">
-                        <button class="btn">Book Service</button>
-                        <button class="detail-btn btn-secondary" data-id="2">Details</button>
-                    </div>
-                </div>
-                
-                <!-- Service 3 -->
+                <!-- EDITABLE: Service 1 -->
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-solar-panel"></i>
                     </div>
-                    <h3>Solar Power Solutions</h3>
-                    <p>Installation of solar panels and complete solar power systems.</p>
-                    <div class="service-price">Starting at KSh 2,500</div>
+                    <h3>Solar Installation</h3>
+                    <p>Professional installation of solar power systems for homes and businesses with warranty.</p>
+                    <div class="service-price">From KSh 150,000</div>
                     <div class="service-actions">
-                        <button class="btn">Book Service</button>
-                        <button class="detail-btn btn-secondary" data-id="3">Details</button>
+                        <button class="btn" data-service="Solar Installation"><i class="fab fa-whatsapp"></i> Book Service</button>
+                        <button class="detail-btn" data-service="1">View Details</button>
                     </div>
                 </div>
+                
+                <!-- EDITABLE: Service 2 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>Electrical Maintenance</h3>
+                    <p>Regular maintenance and troubleshooting for electrical systems to ensure safety and efficiency.</p>
+                    <div class="service-price">From KSh 8,000</div>
+                    <div class="service-actions">
+                        <button class="btn" data-service="Electrical Maintenance"><i class="fab fa-whatsapp"></i> Book Service</button>
+                        <button class="detail-btn" data-service="2">View Details</button>
+                    </div>
+                </div>
+                
+                <!-- EDITABLE: Service 3 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Inverter Repair</h3>
+                    <p>Expert repair services for all types of inverters with genuine spare parts.</p>
+                    <div class="service-price">From KSh 5,000</div>
+                    <div class="service-actions">
+                        <button class="btn" data-service="Inverter Repair"><i class="fab fa-whatsapp"></i> Book Service</button>
+                        <button class="detail-btn" data-service="3">View Details</button>
+                    </div>
+                </div>
+                
+                <!-- EDITABLE: Service 4 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3>Home Electrification</h3>
+                    <p>Complete home wiring and electrical system setup for new constructions.</p>
+                    <div class="service-price">From KSh 120,000</div>
+                    <div class="service-actions">
+                        <button class="btn" data-service="Home Electrification"><i class="fab fa-whatsapp"></i> Book Service</button>
+                        <button class="detail-btn" data-service="4">View Details</button>
+                    </div>
+                </div>
+                
+                <!-- EDITABLE: Service 5 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-industry"></i>
+                    </div>
+                    <h3>Commercial Solutions</h3>
+                    <p>Electrical solutions for commercial buildings, offices, and industrial facilities.</p>
+                    <div class="service-price">From KSh 250,000</div>
+                    <div class="service-actions">
+                        <button class="btn" data-service="Commercial Solutions"><i class="fab fa-whatsapp"></i> Book Service</button>
+                        <button class="detail-btn" data-service="5">View Details</button>
+                    </div>
+                </div>
+                
+                <!-- EDITABLE: Service 6 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <h3>Emergency Services</h3>
+                    <p>24/7 emergency electrical services for urgent repairs and power restoration.</p>
+                    <div class="service-price">From KSh 12,000</div>
+                    <div class="service-actions">
+                        <button class="btn" data-service="Emergency Services"><i class="fab fa-whatsapp"></i> Book Service</button>
+                        <button class="detail-btn" data-service="6">View Details</button>
+                    </div>
+                </div>
+                
+                <!-- EDITABLE: Add more services here -->
+                <!-- Copy the service-card structure above and modify content -->
             </div>
         </div>
     </section>
-    
+
     <!-- Gallery Section -->
-    <section id="gallery" class="gallery">
+    <section class="gallery" id="gallery">
         <div class="container">
-            <h2 class="section-title">Our Work Gallery</h2>
+            <h2 class="section-title">Our Gallery</h2>
             
             <div class="gallery-tabs">
-                <button class="gallery-tab active" data-tab="residential">Residential</button>
-                <button class="gallery-tab" data-tab="commercial">Commercial</button>
-                <button class="gallery-tab" data-tab="industrial">Industrial</button>
+                <button class="gallery-tab active" data-tab="images">Images</button>
+                <button class="gallery-tab" data-tab="videos">Videos</button>
+                <button class="gallery-tab" data-tab="projects">Projects</button>
             </div>
             
-            <div class="gallery-content active" id="residential-gallery">
+            <div class="gallery-content active" id="images-tab">
                 <div class="gallery-grid">
+                    <!-- EDITABLE: Gallery Image 1 -->
                     <div class="gallery-item">
-                        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1558&q=80" alt="Residential Electrical Work">
+                        <img src="C:\Users\darraleh\dmnsale\improved web\solar panel.jpg" alt="Solar Installation">
                         <div class="gallery-overlay">
-                            <h3>Modern Home Wiring</h3>
-                            <p>Complete electrical wiring for a contemporary residence</p>
+                            <h3>Solar Panel Installation</h3>
+                            <p>Residential rooftop solar system</p>
                         </div>
                     </div>
+                    
+                    <!-- EDITABLE: Gallery Image 2 -->
                     <div class="gallery-item">
-                        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Lighting Installation">
+                        <img src="C:\Users\darraleh\dmnsale\improved web\electrical main tenance.jpg" alt="Electrical Work">
                         <div class="gallery-overlay">
-                            <h3>Custom Lighting</h3>
-                            <p>Design and installation of custom lighting solutions</p>
+                            <h3>Electrical Maintenance</h3>
+                            <p>Commercial electrical system inspection</p>
                         </div>
                     </div>
+                    
+                    <!-- EDITABLE: Gallery Image 3 -->
                     <div class="gallery-item">
-                        <video controls>
-                            <source src="#" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
+                        <img src="C:\Users\darraleh\dmnsale\improved web\WhatsApp Image 2025-10-10 at 19.53.26_da165f0d.jpg" alt="Inverter Setup">
                         <div class="gallery-overlay">
-                            <h3>Smart Home Setup</h3>
-                            <p>Installation of smart home electrical systems</p>
+                            <h3>Inverter Installation</h3>
+                            <p>Home backup power system setup</p>
                         </div>
                     </div>
+
+
+                     <!-- EDITABLE: Gallery Image 4 -->
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80" alt="Inverter Setup">
+                        <div class="gallery-overlay">
+                            <h3>Inverter Installation</h3>
+                            <p>Home backup power system setup</p>
+                        </div>
+                    </div>
+                    
+                    <!-- EDITABLE: Add more gallery images here -->
+                    <!-- Copy the gallery-item structure above and modify content -->
                 </div>
             </div>
             
-            <div class="gallery-content" id="commercial-gallery">
+            <div class="gallery-content" id="videos-tab">
                 <div class="gallery-grid">
-                    <div class="gallery-item">
-                        <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80" alt="Office Electrical Work">
-                        <div class="gallery-overlay">
-                            <h3>Office Wiring</h3>
-                            <p>Electrical systems for modern office spaces</p>
-                        </div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80" alt="Retail Store Lighting">
-                        <div class="gallery-overlay">
-                            <h3>Retail Lighting</h3>
-                            <p>Custom lighting solutions for retail environments</p>
-                        </div>
-                    </div>
+                    <!-- EDITABLE: Video 1 -->
                     <div class="gallery-item">
                         <video controls>
                             <source src="#" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
                         <div class="gallery-overlay">
-                            <h3>Commercial Panel Installation</h3>
-                            <p>Installation of commercial electrical panels</p>
+                            <h3>Solar Installation Process</h3>
+                            <p>Step-by-step guide to our installation process</p>
                         </div>
                     </div>
+                    
+                    <!-- EDITABLE: Video 2 -->
+                    <div class="gallery-item">
+                        <video controls>
+                            <source src="#" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="gallery-overlay">
+                            <h3>Product Overview</h3>
+                            <p>Detailed look at our latest products</p>
+                        </div>
+                    </div>
+                    
+                    <!-- EDITABLE: Add more videos here -->
+                    <!-- Copy the gallery-item structure above and modify content -->
+                </div>
+            </div>
+            
+            <div class="gallery-content" id="projects-tab">
+                <div class="gallery-grid">
+                    <!-- EDITABLE: Project 1 -->
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1548345680-f5475ea5df84?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2073&q=80" alt="Commercial Project">
+                        <div class="gallery-overlay">
+                            <h3>Commercial Solar Project</h3>
+                            <p>50kW solar installation for business</p>
+                        </div>
+                    </div>
+                    
+                    <!-- EDITABLE: Project 2 -->
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2058&q=80" alt="Residential Project">
+                        <div class="gallery-overlay">
+                            <h3>Residential Backup System</h3>
+                            <p>Complete home power backup solution</p>
+                        </div>
+                    </div>
+                    
+                    <!-- EDITABLE: Add more projects here -->
+                    <!-- Copy the gallery-item structure above and modify content -->
                 </div>
             </div>
         </div>
     </section>
-    
+
     <!-- Problem Solver Section -->
-    <section id="problem-solver" class="problem-solver">
+    <section class="problem-solver" id="problem-solver">
         <div class="container">
-            <h2 class="section-title">Electrical Problem Solver</h2>
-            <p class="section-subtitle" style="text-align: center; margin-bottom: 30px;">Describe your electrical issue and we'll help you find a solution</p>
+            <h2 class="section-title" style="color: white;">Electrical Problem Solver</h2>
+            <p style="text-align: center; margin-bottom: 30px; max-width: 800px; margin-left: auto; margin-right: auto;">
+                Having electrical issues? Let us help! Describe your problem, and our experts will provide solutions.
+            </p>
             
             <form class="problem-form" id="problem-form">
-                <div class="form-group">
-                    <label for="problem-location">Location</label>
-                    <input type="text" id="problem-location" placeholder="Enter your location" required>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="problem-name">Your Name</label>
+                        <input type="text" id="problem-name" placeholder="Enter your full name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="problem-phone">Phone Number</label>
+                        <input type="tel" id="problem-phone" placeholder="Enter your phone number" required>
+                    </div>
                 </div>
                 
                 <div class="form-group">
@@ -1627,8 +1859,10 @@
                             <option value="power-outage">Power Outage</option>
                             <option value="flickering-lights">Flickering Lights</option>
                             <option value="tripping-breaker">Tripping Circuit Breaker</option>
-                            <option value="electrical-shock">Electrical Shock</option>
-                            <option value="faulty-outlet">Faulty Outlet</option>
+                            <option value="socket-issues">Socket/Outlet Issues</option>
+                            <option value="appliance-failure">Appliance Not Working</option>
+                            <option value="solar-issues">Solar System Problems</option>
+                            <option value="inverter-issues">Inverter/Battery Issues</option>
                             <option value="other">Other</option>
                         </select>
                     </div>
@@ -1639,98 +1873,152 @@
                 
                 <div class="form-group">
                     <label for="problem-description">Problem Description</label>
-                    <textarea id="problem-description" placeholder="Please describe your electrical problem in detail..." required></textarea>
+                    <textarea id="problem-description" placeholder="Please describe your problem in detail..." required></textarea>
                 </div>
                 
-                <div class="photo-upload">
-                    <label>Upload Photos of the Problem (Optional)</label>
-                    <div class="photo-preview" id="photo-preview">
-                        <i class="fas fa-image" style="font-size: 2rem; color: rgba(255,255,255,0.5);"></i>
-                    </div>
-                    <div class="photo-actions">
-                        <input type="file" id="photo-upload" accept="image/*" style="display: none;">
-                        <button type="button" class="btn" id="upload-photo-btn"><i class="fas fa-upload"></i> Upload Photo</button>
-                        <button type="button" class="btn btn-secondary" id="capture-photo-btn"><i class="fas fa-camera"></i> Take Photo</button>
-                    </div>
-                </div>
-                
-                <div class="video-upload">
-                    <label>Upload Video of the Problem (Optional)</label>
-                    <div class="video-preview" id="video-preview">
-                        <i class="fas fa-video" style="font-size: 2rem; color: rgba(255,255,255,0.5);"></i>
-                    </div>
-                    <div class="video-actions">
-                        <input type="file" id="video-upload" accept="video/*" style="display: none;">
-                        <button type="button" class="btn" id="upload-video-btn"><i class="fas fa-upload"></i> Upload Video</button>
-                        <button type="button" class="btn btn-secondary" id="capture-video-btn"><i class="fas fa-video"></i> Record Video</button>
+                <div class="form-group">
+                    <label>Upload Photos (Optional)</label>
+                    <div class="camera-container">
+                        <div id="camera-preview">
+                            <video id="video" autoplay></video>
+                            <canvas id="canvas" style="display: none;"></canvas>
+                        </div>
+                        <img id="captured-image" alt="Captured Image">
+                        <div class="camera-controls">
+                            <button type="button" id="start-camera" class="btn"><i class="fas fa-camera"></i> Start Camera</button>
+                            <button type="button" id="capture" class="btn btn-secondary" style="display: none;"><i class="fas fa-camera-retro"></i> Capture</button>
+                            <button type="button" id="retake" class="btn" style="display: none;"><i class="fas fa-redo"></i> Retake</button>
+                        </div>
+                        <p>Or upload existing photos:</p>
+                        <input type="file" id="photo-upload" accept="image/*">
                     </div>
                 </div>
                 
-                <button type="submit" class="btn" style="width: 100%; margin-top: 20px;"><i class="fas fa-wrench"></i> Get Solution</button>
+                <div class="form-group">
+                    <label>Upload Video (Optional)</label>
+                    <div class="camera-container">
+                        <div id="video-recorder">
+                            <video id="video-preview" controls style="display: none;"></video>
+                            <div id="video-recording-message" style="display: none; text-align: center; padding: 20px;">
+                                <i class="fas fa-video fa-2x"></i>
+                                <p>Recording in progress...</p>
+                            </div>
+                        </div>
+                        <div class="camera-controls">
+                            <button type="button" id="start-video" class="btn"><i class="fas fa-video"></i> Start Recording</button>
+                            <button type="button" id="stop-video" class="btn btn-secondary" style="display: none;"><i class="fas fa-stop"></i> Stop Recording</button>
+                        </div>
+                        <p>Or upload existing videos:</p>
+                        <input type="file" id="video-upload" accept="video/*">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="next-of-kin">Next of Kin Contact (Optional)</label>
+                    <input type="text" id="next-of-kin" placeholder="Name and phone number of next of kin">
+                </div>
+                
+                <button type="button" class="btn btn-whatsapp" id="submit-problem"><i class="fab fa-whatsapp"></i> Send via WhatsApp</button>
             </form>
         </div>
     </section>
-    
+
     <!-- Quotation Section -->
-    <section id="quotation" class="quotation">
+    <section class="quotation" id="quotation">
         <div class="container">
-            <h2 class="section-title">Request a Quotation</h2>
+            <h2 class="section-title" style="color: white;">Request a Quotation</h2>
+            <p style="text-align: center; margin-bottom: 30px; max-width: 800px; margin-left: auto; margin-right: auto;">
+                Get a customized quote for our products or services. Fill out the form below and we'll get back to you within 24 hours.
+            </p>
             
             <form class="quotation-form" id="quotation-form">
                 <div class="form-row">
                     <div class="form-group">
                         <label for="quote-name">Full Name</label>
-                        <input type="text" id="quote-name" placeholder="Enter your full name" required>
+                        <input type="text" id="quote-name" placeholder="Your full name" required>
                     </div>
                     <div class="form-group">
                         <label for="quote-email">Email Address</label>
-                        <input type="email" id="quote-email" placeholder="Enter your email" required>
+                        <input type="email" id="quote-email" placeholder="Your email address" required>
                     </div>
                 </div>
                 
                 <div class="form-row">
                     <div class="form-group">
                         <label for="quote-phone">Phone Number</label>
-                        <input type="tel" id="quote-phone" placeholder="Enter your phone number" required>
+                        <input type="tel" id="quote-phone" placeholder="Your phone number" required>
                     </div>
                     <div class="form-group">
                         <label for="quote-location">Location</label>
-                        <input type="text" id="quote-location" placeholder="Enter your location" required>
+                        <input type="text" id="quote-location" placeholder="Your location" required>
                     </div>
                 </div>
                 
                 <div class="form-group">
-                    <label for="quote-service">Service Required</label>
+                    <label for="quote-type">Service/Product Type</label>
                     <div class="custom-dropdown">
-                        <select id="quote-service" required>
-                            <option value="">Select service</option>
-                            <option value="installation">Electrical Installation</option>
-                            <option value="repair">Repair Services</option>
-                            <option value="maintenance">Maintenance</option>
-                            <option value="solar">Solar Installation</option>
-                            <option value="consultation">Consultation</option>
+                        <select id="quote-type" required>
+                            <option value="">Select service or product</option>
+                            <option value="solar-installation">Solar Installation</option>
+                            <option value="electrical-maintenance">Electrical Maintenance</option>
+                            <option value="inverter-repair">Inverter Repair</option>
+                            <option value="home-electrification">Home Electrification</option>
+                            <option value="commercial-solutions">Commercial Solutions</option>
+                            <option value="emergency-services">Emergency Services</option>
+                            <option value="solar-panel">Solar Panel</option>
+                            <option value="inverter">Inverter</option>
+                            <option value="battery">Battery</option>
+                            <option value="accessories">Accessories</option>
                             <option value="other">Other</option>
                         </select>
                     </div>
-                    <div class="other-input" id="other-service-input">
-                        <input type="text" placeholder="Please specify the service">
+                    <div class="other-input" id="other-quote-input">
+                        <input type="text" placeholder="Please specify the service or product">
                     </div>
                 </div>
                 
                 <div class="form-group">
-                    <label for="quote-description">Project Description</label>
-                    <textarea id="quote-description" placeholder="Please describe your project requirements in detail..." required></textarea>
+                    <label for="quote-budget">Budget Range (Optional)</label>
+                    <div class="custom-dropdown">
+                        <select id="quote-budget">
+                            <option value="">Select budget range</option>
+                            <option value="under-50k">Under KSh 50,000</option>
+                            <option value="50k-100k">KSh 50,000 - 100,000</option>
+                            <option value="100k-250k">KSh 100,000 - 250,000</option>
+                            <option value="250k-500k">KSh 250,000 - 500,000</option>
+                            <option value="over-500k">Over KSh 500,000</option>
+                        </select>
+                    </div>
                 </div>
                 
-                <button type="submit" class="btn" style="width: 100%;"><i class="fas fa-paper-plane"></i> Submit Request</button>
+                <div class="form-group">
+                    <label for="quote-timeline">Project Timeline (Optional)</label>
+                    <div class="custom-dropdown">
+                        <select id="quote-timeline">
+                            <option value="">Select timeline</option>
+                            <option value="urgent">Urgent (Within 1 week)</option>
+                            <option value="1-2-weeks">1-2 Weeks</option>
+                            <option value="2-4-weeks">2-4 Weeks</option>
+                            <option value="1-2-months">1-2 Months</option>
+                            <option value="flexible">Flexible</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="quote-details">Project Details</label>
+                    <textarea id="quote-details" placeholder="Please describe your requirements in detail..." required></textarea>
+                </div>
+                
+                <button type="button" class="btn btn-whatsapp" id="submit-quote"><i class="fab fa-whatsapp"></i> Submit via WhatsApp</button>
             </form>
         </div>
     </section>
-    
+
     <!-- Contact Section -->
-    <section id="contact" class="contact">
+    <section class="contact" id="contact">
         <div class="container">
-            <h2 class="section-title">Contact Us</h2>
+            <h2 class="section-title" style="color: white;">Contact Us</h2>
             
             <div class="contact-grid">
                 <div class="contact-info">
@@ -1740,13 +2028,13 @@
                         </div>
                         <div class="contact-details">
                             <h3>Our Location</h3>
-                            <p>123 Electric Avenue, Power City, PC 12345</p>
+                            <p>123 Energy Street, Power City, PC 12345</p>
                         </div>
                     </div>
                     
                     <div class="contact-item">
                         <div class="contact-icon">
-                            <i class="fas fa-phone"></i>
+                            <i class="fas fa-phone-alt"></i>
                         </div>
                         <div class="contact-details">
                             <h3>Phone Number</h3>
@@ -1760,7 +2048,7 @@
                         </div>
                         <div class="contact-details">
                             <h3>Email Address</h3>
-                            <p></p>
+                            <p>iggysystems@gmail.com</p>
                         </div>
                     </div>
                     
@@ -1769,16 +2057,16 @@
                             <i class="fas fa-clock"></i>
                         </div>
                         <div class="contact-details">
-                            <h3>Working Hours</h3>
+                            <h3>Business Hours</h3>
                             <p>Monday - Friday: 8:00 AM - 6:00 PM</p>
-                            <p>Saturday: 9:00 AM - 4:00 PM</p>
+                            <p>Saturday: 9:00 AM - 2:00 PM</p>
                         </div>
                     </div>
                     
                     <div class="contact-buttons">
-                        <a href="tel:25410373336" class="btn"><i class="fas fa-phone"></i> Call Now</a>
-                        <a href="https://wa.me/25410373336?text=Hi%20Iggy%20Power%20Solutions,%20I%20would%20like%20to%20inquire%20about%20your%20services" class="btn btn-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-                        <a href="mailto:iggysystems@gmail.com?subject=Inquiry%20from%20Website&body=Hello%20Iggy%20Power%20Solutions,%0A%0AI%20would%20like%20to%20know%20more%20about%20your%20products%20and%20services." class="btn btn-secondary"><i class="fas fa-envelope"></i> Send Email</a>
+                        <a href="tel:25410373336" class="btn"><i class="fas fa-phone-alt"></i> Call Now</a>
+                        <a href="mailto:iggysystems@gmail.com" class="btn btn-secondary"><i class="fas fa-envelope"></i> Send Email</a>
+                        <a href="https://wa.me/25410373336" class="btn btn-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
                     </div>
                     
                     <!-- Developer Contact Section -->
@@ -1809,39 +2097,39 @@
                     <h3>Send Us a Message</h3>
                     <form id="contact-form">
                         <div class="form-group">
-                            <label for="contact-name">Full Name</label>
-                            <input type="text" id="contact-name" placeholder="Enter your full name" required>
+                            <label for="contact-name">Your Name</label>
+                            <input type="text" id="contact-name" placeholder="Your name">
                         </div>
                         
                         <div class="form-group">
-                            <label for="contact-email">Email Address</label>
-                            <input type="email" id="contact-email" placeholder="Enter your email" required>
+                            <label for="contact-email">Your Email</label>
+                            <input type="email" id="contact-email" placeholder="Your email">
                         </div>
                         
                         <div class="form-group">
                             <label for="contact-subject">Subject</label>
-                            <input type="text" id="contact-subject" placeholder="Enter subject" required>
+                            <input type="text" id="contact-subject" placeholder="Subject">
                         </div>
                         
                         <div class="form-group">
                             <label for="contact-message">Message</label>
-                            <textarea id="contact-message" placeholder="Enter your message" required></textarea>
+                            <textarea id="contact-message" placeholder="Your message..."></textarea>
                         </div>
                         
-                        <button type="submit" class="btn" style="width: 100%;"><i class="fas fa-paper-plane"></i> Send Message</button>
+                        <button type="button" class="btn btn-whatsapp" id="submit-contact"><i class="fab fa-whatsapp"></i> Send via WhatsApp</button>
                     </form>
                 </div>
             </div>
         </div>
     </section>
-    
+
     <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-content">
                 <div class="footer-column">
                     <h3>Iggy Power Solutions</h3>
-                    <p>Your trusted partner for all electrical needs. We provide quality products and professional services to power your world safely and efficiently.</p>
+                    <p>Your trusted partner for quality electrical products and expert services. We provide innovative power solutions for residential and commercial needs.</p>
                     <div class="social-icons">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
@@ -1853,49 +2141,46 @@
                 <div class="footer-column">
                     <h3>Quick Links</h3>
                     <ul class="footer-links">
-                        <li><a href="#">Home</a></li>
+                        <li><a href="#home">Home</a></li>
                         <li><a href="#products">Products</a></li>
                         <li><a href="#services">Services</a></li>
                         <li><a href="#gallery">Gallery</a></li>
                         <li><a href="#problem-solver">Problem Solver</a></li>
-                        <li><a href="#quotation">Get Quote</a></li>
+                        <li><a href="#quotation">Quotation</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Our Products</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Solar Panels</a></li>
+                        <li><a href="#">Inverters</a></li>
+                        <li><a href="#">Batteries</a></li>
+                        <li><a href="#">Charge Controllers</a></li>
+                        <li><a href="#">Accessories</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-column">
                     <h3>Our Services</h3>
                     <ul class="footer-links">
-                        <li><a href="#">Electrical Installation</a></li>
-                        <li><a href="#">Maintenance & Repair</a></li>
-                        <li><a href="#">Solar Power Solutions</a></li>
+                        <li><a href="#">Solar Installation</a></li>
+                        <li><a href="#">Electrical Maintenance</a></li>
+                        <li><a href="#">Inverter Repair</a></li>
+                        <li><a href="#">Home Electrification</a></li>
+                        <li><a href="#">Commercial Solutions</a></li>
                         <li><a href="#">Emergency Services</a></li>
-                        <li><a href="#">Consultation</a></li>
                     </ul>
-                </div>
-                
-                <div class="footer-column">
-                    <h3>Contact Info</h3>
-                    <div class="contact-info">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>123 Electric Avenue, Power City, PC 12345</span>
-                    </div>
-                    <div class="contact-info">
-                        <i class="fas fa-phone"></i>
-                        <span>25410373336</span>
-                    </div>
-                    <div class="contact-info">
-                        <i class="fas fa-envelope"></i>
-                        <span>iggysystems@gmail.com</span>
-                    </div>
                 </div>
             </div>
             
             <div class="copyright">
-                <p>&copy; 2025 Iggy Power Solutions. All Rights Reserved.</p>
+                <p>&copy; 2023 Iggy Power Solutions. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
-    
+
     <!-- Cart Modal -->
     <div class="modal" id="cart-modal">
         <div class="modal-content">
@@ -1903,773 +2188,1024 @@
             <div class="modal-header">
                 <h2>Your Shopping Cart</h2>
             </div>
-            <div class="cart-items" id="cart-items">
+            <div class="cart-items">
                 <!-- Cart items will be dynamically added here -->
             </div>
             <div class="cart-total">
                 <span>Total:</span>
                 <span id="cart-total-price">KSh 0.00</span>
             </div>
-            <button class="checkout-btn"><i class="fas fa-credit-card"></i> Proceed to Checkout</button>
+            <button class="checkout-btn" id="checkout-btn"><i class="fas fa-shopping-bag"></i> Proceed to Checkout</button>
         </div>
     </div>
-    
+
     <!-- Product Detail Modal -->
-    <div class="modal" id="product-detail-modal">
+    <div class="modal" id="product-modal">
         <div class="modal-content">
-            <button class="close-btn" id="close-product-detail">&times;</button>
+            <button class="close-btn" id="close-product">&times;</button>
             <div class="product-detail">
                 <div class="product-detail-img">
-                    <i class="fas fa-bolt"></i>
+                    <i class="fas fa-solar-panel" id="detail-product-icon"></i>
                 </div>
                 <div class="product-detail-info">
-                    <h2 id="detail-product-name">Product Name</h2>
-                    <div class="price" id="detail-product-price">KSh 0.00</div>
+                    <h2 id="detail-product-name">Solar Panel 300W</h2>
+                    <div class="price" id="detail-product-price">KSh 45,999</div>
                     <div class="description" id="detail-product-description">
-                        Product description goes here.
+                        <p>High-efficiency monocrystalline solar panel with advanced cell technology for maximum power output. Perfect for residential and commercial applications.</p>
                     </div>
                     <div class="product-specs">
                         <h3>Specifications</h3>
                         <ul id="detail-product-specs">
-                            <!-- Specifications will be added dynamically -->
+                            <li><i class="fas fa-check"></i> Maximum Power: 300W</li>
+                            <li><i class="fas fa-check"></i> Cell Type: Monocrystalline</li>
+                            <li><i class="fas fa-check"></i> Efficiency: &gt;20%</li>
+                            <li><i class="fas fa-check"></i> Dimensions: 1640×992×35mm</li>
+                            <li><i class="fas fa-check"></i> Weight: 18.5kg</li>
                         </ul>
                     </div>
-                    <div class="product-actions" style="margin-top: 20px;">
-                        <button class="add-to-cart"><i class="fas fa-cart-plus"></i> Add to Cart</button>
-                        <button class="btn btn-secondary"><i class="fas fa-heart"></i> Add to Wishlist</button>
+                    <div class="product-actions" id="detail-product-actions">
+                        <!-- This will be dynamically populated based on stock status -->
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    
+
     <!-- Service Detail Modal -->
-    <div class="modal" id="service-detail-modal">
+    <div class="modal" id="service-modal">
         <div class="modal-content">
-            <button class="close-btn" id="close-service-detail">&times;</button>
+            <button class="close-btn" id="close-service">&times;</button>
             <div class="service-detail">
                 <div class="service-detail-img">
-                    <i class="fas fa-bolt"></i>
+                    <i class="fas fa-solar-panel" id="detail-service-icon"></i>
                 </div>
                 <div class="service-detail-info">
-                    <h2 id="detail-service-name">Service Name</h2>
-                    <div class="price" id="detail-service-price">Starting at KSh 0.00</div>
+                    <h2 id="detail-service-name">Solar Installation</h2>
+                    <div class="price" id="detail-service-price">From KSh 150,000</div>
                     <div class="description" id="detail-service-description">
-                        Service description goes here.
+                        <p>Professional installation of solar power systems for homes and businesses. Our certified technicians ensure optimal placement and connection for maximum efficiency.</p>
                     </div>
                     <div class="service-features">
-                        <h3>What's Included</h3>
+                        <h3>Service Includes</h3>
                         <ul id="detail-service-features">
-                            <!-- Features will be added dynamically -->
+                            <li><i class="fas fa-check"></i> Site assessment and planning</li>
+                            <li><i class="fas fa-check"></i> Professional installation</li>
+                            <li><i class="fas fa-check"></i> System testing and commissioning</li>
+                            <li><i class="fas fa-check"></i> User training</li>
+                            <li><i class="fas fa-check"></i> 5-year workmanship warranty</li>
                         </ul>
                     </div>
-                    <div class="service-actions" style="margin-top: 20px;">
-                        <button class="btn">Book Service</button>
-                        <button class="btn btn-secondary"><i class="fas fa-file-invoice-dollar"></i> Get Quote</button>
-                    </div>
+                    <button class="btn" id="detail-service-book"><i class="fab fa-whatsapp"></i> Book This Service</button>
                 </div>
             </div>
         </div>
     </div>
-    
+
     <!-- Scroll to Top Button -->
     <div class="scroll-top" id="scroll-top">
         <i class="fas fa-chevron-up"></i>
     </div>
-    
-   <script>
-    // DOM Elements
-    const cartIcon = document.getElementById('cart-icon');
-    const cartModal = document.getElementById('cart-modal');
-    const closeCart = document.getElementById('close-cart');
-    const productDetailModal = document.getElementById('product-detail-modal');
-    const closeProductDetail = document.getElementById('close-product-detail');
-    const serviceDetailModal = document.getElementById('service-detail-modal');
-    const closeServiceDetail = document.getElementById('close-service-detail');
-    const scrollTopBtn = document.getElementById('scroll-top');
-    const searchInput = document.getElementById('search-input');
-    const searchResults = document.getElementById('search-results');
-    const problemTypeSelect = document.getElementById('problem-type');
-    const otherProblemInput = document.getElementById('other-problem-input');
-    const quoteServiceSelect = document.getElementById('quote-service');
-    const otherServiceInput = document.getElementById('other-service-input');
-    const uploadPhotoBtn = document.getElementById('upload-photo-btn');
-    const capturePhotoBtn = document.getElementById('capture-photo-btn');
-    const photoUpload = document.getElementById('photo-upload');
-    const photoPreview = document.getElementById('photo-preview');
-    const uploadVideoBtn = document.getElementById('upload-video-btn');
-    const captureVideoBtn = document.getElementById('capture-video-btn');
-    const videoUpload = document.getElementById('video-upload');
-    const videoPreview = document.getElementById('video-preview');
-    
-    // Cart functionality
-    let cart = [];
-    
-    // Sample product data
-    const products = [
-        {
-            id: 1,
-            name: "Copper Electrical Wire",
-            description: "High-quality copper wire for residential and commercial use. This wire meets all safety standards and is suitable for various electrical applications.",
-            price: 4599,
-            icon: "fas fa-bolt",
-            specs: [
-                "Material: Pure Copper",
-                "Gauge: 12 AWG",
-                "Length: 100 ft",
-                "Voltage Rating: 600V",
-                "Temperature Rating: 90°C"
-            ],
-            inStock: true,
-            category: "wires"
-        },
-        {
-            id: 2,
-            name: "Smart Light Switch",
-            description: "WiFi enabled smart switch with voice control compatibility. Control your lights from anywhere using our mobile app or voice commands.",
-            price: 2499,
-            icon: "fas fa-toggle-on",
-            specs: [
-                "WiFi Connectivity: 2.4GHz",
-                "Voice Control: Alexa, Google Assistant",
-                "Mobile App: Available for iOS and Android",
-                "Load Capacity: 15A",
-                "Warranty: 2 years"
-            ],
-            inStock: true,
-            category: "switches"
-        },
-        {
-            id: 3,
-            name: "LED Panel Light",
-            description: "Energy-efficient LED panel light for offices and homes. Provides bright, uniform lighting with minimal energy consumption.",
-            price: 1850,
-            icon: "fas fa-lightbulb",
-            specs: [
-                "Power: 40W",
-                "Lumen Output: 3600 lm",
-                "Color Temperature: 4000K (Cool White)",
-                "Dimensions: 2x4 ft",
-                "Lifespan: 50,000 hours"
-            ],
-            inStock: true,
-            category: "lighting"
-        },
-        {
-            id: 4,
-            name: "Electrical Fire Extinguisher",
-            description: "Specialized fire extinguisher for electrical fires. Safe to use on energized electrical equipment without risk of electric shock.",
-            price: 8999,
-            icon: "fas fa-fire-extinguisher",
-            specs: [
-                "Type: CO2 (Carbon Dioxide)",
-                "Capacity: 5 lbs",
-                "Rating: 5-B:C",
-                "Discharge Time: 10-15 seconds",
-                "Operating Temperature: -40°F to 120°F"
-            ],
-            inStock: false,
-            category: "safety"
-        }
-    ];
 
-    // Sample services data
-    const services = [
-        {
-            id: 1,
-            name: "Electrical Installation",
-            description: "Professional installation of electrical systems for homes and businesses. Our certified electricians ensure safe and code-compliant installations.",
-            price: 1500,
-            icon: "fas fa-bolt",
-            features: [
-                "Complete wiring installation",
-                "Circuit breaker panel installation",
-                "Outlet and switch installation",
-                "Lighting fixture installation",
-                "Final inspection and certification"
-            ],
-            duration: "1-3 days"
-        },
-        {
-            id: 2,
-            name: "Maintenance & Repair",
-            description: "Regular maintenance and emergency repair services for electrical systems. We help prevent electrical issues and fix problems quickly when they occur.",
-            price: 8000,
-            icon: "fas fa-tools",
-            features: [
-                "Electrical system inspection",
-                "Troubleshooting and diagnostics",
-                "Component replacement",
-                "Wiring repairs",
-                "24/7 emergency service available"
-            ],
-            duration: "1-4 hours"
-        },
-        {
-            id: 3,
-            name: "Solar Power Solutions",
-            description: "Installation of solar panels and complete solar power systems. Reduce your energy bills and environmental impact with clean solar energy.",
-            price: 2500,
-            icon: "fas fa-solar-panel",
-            features: [
-                "Site assessment and system design",
-                "Solar panel installation",
-                "Inverter and battery installation",
-                "Grid connection setup",
-                "Maintenance and monitoring"
-            ],
-            duration: "3-7 days"
-        }
-    ];
+    <script>
+        // Product data
+        const products = {
+            1: {
+                name: "Solar Panel 300W",
+                price: "KSh 45,999",
+                description: "High-efficiency monocrystalline solar panel with advanced cell technology for maximum power output. Perfect for residential and commercial applications.",
+                icon: "fas fa-solar-panel",
+                specs: [
+                    "Maximum Power: 300W",
+                    "Cell Type: Monocrystalline",
+                    "Efficiency: >20%",
+                    "Dimensions: 1640×992×35mm",
+                    "Weight: 18.5kg"
+                ],
+                inStock: false
+            },
+            2: {
+                name: "Power Inverter 2000VA",
+                price: "KSh 24,999",
+                description: "Pure sine wave inverter with LCD display and multiple protection features. Ideal for home and office use.",
+                icon: "fas fa-bolt",
+                specs: [
+                    "Power: 2000VA/1600W",
+                    "Waveform: Pure Sine Wave",
+                    "Input Voltage: 12V/24V",
+                    "Output Voltage: 220-240V",
+                    "Protection: Overload, Short Circuit, Overheat"
+                ],
+                inStock: true
+            },
+            3: {
+                name: "Deep Cycle Battery 200AH",
+                price: "KSh 32,000",
+                description: "Maintenance-free deep cycle battery for solar and inverter applications. Long lifespan and reliable performance.",
+                icon: "fas fa-car-battery",
+                specs: [
+                    "Capacity: 200AH",
+                    "Type: Deep Cycle AGM",
+                    "Voltage: 12V",
+                    "Lifespan: 5-7 years",
+                    "Maintenance: Free"
+                ],
+                inStock: true
+            },
+            4: {
+                name: "Solar Charge Controller 40A",
+                price: "KSh 12,000",
+                description: "MPPT solar charge controller with Bluetooth monitoring capability. Maximizes solar energy harvest.",
+                icon: "fas fa-plug",
+                specs: [
+                    "Current: 40A",
+                    "Type: MPPT",
+                    "Max PV Input: 150V",
+                    "Efficiency: >98%",
+                    "Communication: Bluetooth"
+                ],
+                inStock: false
+            },
+            5: {
+                name: "Solar Water Heater 150L",
+                price: "KSh 85,000",
+                description: "Efficient solar water heating system with heat retention technology. Perfect for residential use.",
+                icon: "fas fa-sun",
+                specs: [
+                    "Capacity: 150L",
+                    "Collector Type: Evacuated Tube",
+                    "Tank Material: Stainless Steel",
+                    "Backup: Electric Element",
+                    "Warranty: 5 years"
+                ],
+                inStock: true
+            },
+            6: {
+                name: "Hybrid Inverter 5KVA",
+                price: "KSh 89,999",
+                description: "Advanced hybrid inverter with grid-tie and off-grid capabilities. Perfect for solar systems.",
+                icon: "fas fa-tachometer-alt",
+                specs: [
+                    "Power: 5KVA/4000W",
+                    "Type: Hybrid",
+                    "Input: Solar/Grid/Battery",
+                    "MPPT Charger: Built-in",
+                    "Communication: Wi-Fi/RS485"
+                ],
+                inStock: false
+            }
+        };
 
-    // Combined search data
-    const searchData = [...products.map(p => ({...p, type: 'product'})), ...services.map(s => ({...s, type: 'service'}))];
-    
-    // Toggle "Other" input fields based on dropdown selection
-    problemTypeSelect.addEventListener('change', function() {
-        if (this.value === 'other') {
-            otherProblemInput.style.display = 'block';
-        } else {
-            otherProblemInput.style.display = 'none';
-        }
-    });
-    
-    quoteServiceSelect.addEventListener('change', function() {
-        if (this.value === 'other') {
-            otherServiceInput.style.display = 'block';
-        } else {
-            otherServiceInput.style.display = 'none';
-        }
-    });
-    
-    // Photo upload functionality
-    uploadPhotoBtn.addEventListener('click', function() {
-        photoUpload.click();
-    });
-    
-    photoUpload.addEventListener('change', function(e) {
-        const file = e.target.files[0];
-        if (file) {
-            const reader = new FileReader();
-            reader.onload = function(e) {
-                photoPreview.innerHTML = `<img src="${e.target.result}" alt="Uploaded Photo">`;
-            };
-            reader.readAsDataURL(file);
-        }
-    });
-    
-    capturePhotoBtn.addEventListener('click', function() {
-        alert("Camera functionality would be implemented here in a real application");
-        // In a real app, this would access the device camera
-    });
-    
-    // Video upload functionality
-    uploadVideoBtn.addEventListener('click', function() {
-        videoUpload.click();
-    });
-    
-    videoUpload.addEventListener('change', function(e) {
-        const file = e.target.files[0];
-        if (file) {
-            const reader = new FileReader();
-            reader.onload = function(e) {
-                videoPreview.innerHTML = `<video src="${e.target.result}" controls></video>`;
-            };
-            reader.readAsDataURL(file);
-        }
-    });
-    
-    captureVideoBtn.addEventListener('click', function() {
-        alert("Video recording functionality would be implemented here in a real application");
-        // In a real app, this would access the device camera for video recording
-    });
-    
-    // Modal open/close functionality
-    cartIcon.addEventListener('click', function() {
-        cartModal.style.display = 'flex';
-        updateCartDisplay();
-    });
-    
-    closeCart.addEventListener('click', function() {
-        cartModal.style.display = 'none';
-    });
-    
-    closeProductDetail.addEventListener('click', function() {
-        productDetailModal.style.display = 'none';
-    });
-    
-    closeServiceDetail.addEventListener('click', function() {
-        serviceDetailModal.style.display = 'none';
-    });
-    
-    // Close modals when clicking outside
-    window.addEventListener('click', function(e) {
-        if (e.target === cartModal) {
-            cartModal.style.display = 'none';
-        }
-        if (e.target === productDetailModal) {
-            productDetailModal.style.display = 'none';
-        }
-        if (e.target === serviceDetailModal) {
-            serviceDetailModal.style.display = 'none';
-        }
-    });
-    
-    // Product category filtering
-    const categoryBtns = document.querySelectorAll('.category-btn');
-    const productCards = document.querySelectorAll('.product-card');
-    
-    categoryBtns.forEach(btn => {
-        btn.addEventListener('click', function() {
-            // Remove active class from all buttons
-            categoryBtns.forEach(b => b.classList.remove('active'));
-            // Add active class to clicked button
-            this.classList.add('active');
-            
-            const category = this.getAttribute('data-category');
-            
-            productCards.forEach(card => {
-                if (category === 'all' || card.getAttribute('data-category') === category) {
-                    card.style.display = 'block';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
+        // Service data
+        const services = {
+            1: {
+                name: "Solar Installation",
+                price: "From KSh 150,000",
+                description: "Professional installation of solar power systems for homes and businesses. Our certified technicians ensure optimal placement and connection for maximum efficiency.",
+                icon: "fas fa-solar-panel",
+                features: [
+                    "Site assessment and planning",
+                    "Professional installation",
+                    "System testing and commissioning",
+                    "User training",
+                    "5-year workmanship warranty"
+                ]
+            },
+            2: {
+                name: "Electrical Maintenance",
+                price: "From KSh 8,000",
+                description: "Regular maintenance and troubleshooting for electrical systems to ensure safety and efficiency.",
+                icon: "fas fa-tools",
+                features: [
+                    "Electrical system inspection",
+                    "Wiring checks and repairs",
+                    "Circuit breaker testing",
+                    "Safety device verification",
+                    "Emergency response"
+                ]
+            },
+            3: {
+                name: "Inverter Repair",
+                price: "From KSh 5,000",
+                description: "Expert repair services for all types of inverters with genuine spare parts.",
+                icon: "fas fa-bolt",
+                features: [
+                    "Diagnosis and troubleshooting",
+                    "Component replacement",
+                    "Software updates",
+                    "Performance testing",
+                    "90-day service warranty"
+                ]
+            },
+            4: {
+                name: "Home Electrification",
+                price: "From KSh 120,000",
+                description: "Complete home wiring and electrical system setup for new constructions.",
+                icon: "fas fa-home",
+                features: [
+                    "Electrical design and planning",
+                    "Complete wiring installation",
+                    "Lighting and outlet setup",
+                    "Safety systems installation",
+                    "Final inspection and certification"
+                ]
+            },
+            5: {
+                name: "Commercial Solutions",
+                price: "From KSh 250,000",
+                description: "Electrical solutions for commercial buildings, offices, and industrial facilities.",
+                icon: "fas fa-industry",
+                features: [
+                    "Commercial electrical design",
+                    "Three-phase power systems",
+                    "Emergency power systems",
+                    "Energy management solutions",
+                    "Compliance with regulations"
+                ]
+            },
+            6: {
+                name: "Emergency Services",
+                price: "From KSh 12,000",
+                description: "24/7 emergency electrical services for urgent repairs and power restoration.",
+                icon: "fas fa-exclamation-triangle",
+                features: [
+                    "24/7 availability",
+                    "Rapid response team",
+                    "Temporary power solutions",
+                    "Safety hazard mitigation",
+                    "Complete restoration"
+                ]
+            }
+        };
+
+        // Mobile Toggle Menu
+        document.getElementById('mobile-toggle').addEventListener('click', function() {
+            document.getElementById('nav-links').classList.toggle('active');
         });
-    });
-    
-    // Gallery tabs
-    const galleryTabs = document.querySelectorAll('.gallery-tab');
-    const galleryContents = document.querySelectorAll('.gallery-content');
-    
-    galleryTabs.forEach(tab => {
-        tab.addEventListener('click', function() {
-            // Remove active class from all tabs and contents
-            galleryTabs.forEach(t => t.classList.remove('active'));
-            galleryContents.forEach(c => c.classList.remove('active'));
-            
-            // Add active class to clicked tab
-            this.classList.add('active');
-            
-            // Show corresponding content
-            const tabId = this.getAttribute('data-tab');
-            document.getElementById(`${tabId}-gallery`).classList.add('active');
+
+        // Camera Functionality for Problem Solver
+        const startCamera = document.getElementById('start-camera');
+        const video = document.getElementById('video');
+        const canvas = document.getElementById('canvas');
+        const capture = document.getElementById('capture');
+        const retake = document.getElementById('retake');
+        const capturedImage = document.getElementById('captured-image');
+        
+        let stream = null;
+
+        startCamera.addEventListener('click', async function() {
+            try {
+                stream = await navigator.mediaDevices.getUserMedia({ video: true });
+                video.srcObject = stream;
+                startCamera.style.display = 'none';
+                capture.style.display = 'inline-block';
+            } catch (err) {
+                console.error("Error accessing camera: ", err);
+                alert("Unable to access camera. Please check permissions.");
+            }
         });
-    });
-    
-    // Add to cart functionality
-    const addToCartBtns = document.querySelectorAll('.add-to-cart');
-    
-    addToCartBtns.forEach(btn => {
-        btn.addEventListener('click', function() {
-            const productCard = this.closest('.product-card');
-            const productId = parseInt(productCard.querySelector('.detail-btn').getAttribute('data-id'));
-            const product = products.find(p => p.id === productId);
+
+        capture.addEventListener('click', function() {
+            canvas.width = video.videoWidth;
+            canvas.height = video.videoHeight;
+            canvas.getContext('2d').drawImage(video, 0, 0);
             
-            if (!product) return;
-            
-            // Check if product is already in cart
-            const existingItem = cart.find(item => item.id === product.id);
-            
-            if (existingItem) {
-                existingItem.quantity += 1;
-            } else {
-                cart.push({
-                    id: product.id,
-                    name: product.name,
-                    price: product.price,
-                    quantity: 1,
-                    icon: product.icon
-                });
+            // Stop camera stream
+            if (stream) {
+                stream.getTracks().forEach(track => track.stop());
             }
             
-            updateCartCount();
-            showNotification(`${product.name} added to cart!`);
+            // Show captured image
+            capturedImage.src = canvas.toDataURL('image/png');
+            capturedImage.style.display = 'block';
+            video.style.display = 'none';
+            capture.style.display = 'none';
+            retake.style.display = 'inline-block';
         });
-    });
-    
-    // Update cart count
-    function updateCartCount() {
-        const cartCount = document.querySelector('.cart-count');
-        const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
-        cartCount.textContent = totalItems;
-    }
-    
-    // Update cart display
-    function updateCartDisplay() {
-        const cartItems = document.getElementById('cart-items');
+
+        retake.addEventListener('click', function() {
+            capturedImage.style.display = 'none';
+            video.style.display = 'block';
+            retake.style.display = 'none';
+            startCamera.style.display = 'inline-block';
+            capturedImage.src = '';
+        });
+
+        // Video Recording Functionality
+        const startVideo = document.getElementById('start-video');
+        const stopVideo = document.getElementById('stop-video');
+        const videoPreview = document.getElementById('video-preview');
+        const videoRecordingMessage = document.getElementById('video-recording-message');
+        
+        let mediaRecorder = null;
+        let recordedChunks = [];
+
+        startVideo.addEventListener('click', async function() {
+            try {
+                const stream = await navigator.mediaDevices.getUserMedia({ video: true, audio: true });
+                mediaRecorder = new MediaRecorder(stream);
+                
+                mediaRecorder.ondataavailable = function(event) {
+                    if (event.data.size > 0) {
+                        recordedChunks.push(event.data);
+                    }
+                };
+                
+                mediaRecorder.onstop = function() {
+                    const blob = new Blob(recordedChunks, { type: 'video/webm' });
+                    const url = URL.createObjectURL(blob);
+                    videoPreview.src = url;
+                    videoPreview.style.display = 'block';
+                    videoRecordingMessage.style.display = 'none';
+                    
+                    // Stop all tracks
+                    stream.getTracks().forEach(track => track.stop());
+                };
+                
+                recordedChunks = [];
+                mediaRecorder.start();
+                
+                startVideo.style.display = 'none';
+                stopVideo.style.display = 'inline-block';
+                videoRecordingMessage.style.display = 'block';
+            } catch (err) {
+                console.error("Error accessing camera for video: ", err);
+                alert("Unable to access camera for video recording. Please check permissions.");
+            }
+        });
+
+        stopVideo.addEventListener('click', function() {
+            if (mediaRecorder && mediaRecorder.state !== 'inactive') {
+                mediaRecorder.stop();
+                stopVideo.style.display = 'none';
+                startVideo.style.display = 'inline-block';
+            }
+        });
+
+        // WhatsApp Integration for Notify Me buttons
+        document.querySelectorAll('.notify-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                const productName = this.getAttribute('data-product');
+                const message = `*Iggy Power Solutions - Product Notification*\n\nHello, I'm interested in the ${productName}. Please notify me when it's back in stock.`;
+                const encodedMessage = encodeURIComponent(message);
+                const whatsappUrl = `https://wa.me/25410373336?text=${encodedMessage}`;
+                window.open(whatsappUrl, '_blank');
+            });
+        });
+
+        // WhatsApp Integration for Service Booking
+        document.querySelectorAll('.service-card .btn').forEach(button => {
+            button.addEventListener('click', function() {
+                const serviceName = this.getAttribute('data-service');
+                const message = `*Iggy Power Solutions - Service Booking*\n\nHello, I would like to book the ${serviceName} service. Please provide more details.`;
+                const encodedMessage = encodeURIComponent(message);
+                const whatsappUrl = `https://wa.me/25410373336?text=${encodedMessage}`;
+                window.open(whatsappUrl, '_blank');
+            });
+        });
+
+        // WhatsApp Integration for Problem Solver
+        document.getElementById('submit-problem').addEventListener('click', function() {
+            const problemName = document.getElementById('problem-name').value;
+            const problemPhone = document.getElementById('problem-phone').value;
+            const problemType = document.getElementById('problem-type').value;
+            const problemDescription = document.getElementById('problem-description').value;
+            const nextOfKin = document.getElementById('next-of-kin').value;
+            
+            let message = `*Iggy Power Solutions - Problem Report*\n\n`;
+            message += `Name: ${problemName || 'Not provided'}\n`;
+            message += `Phone: ${problemPhone || 'Not provided'}\n`;
+            message += `Problem Type: ${problemType || 'Not specified'}\n`;
+            message += `Description: ${problemDescription || 'Not provided'}\n`;
+            if (nextOfKin) {
+                message += `Next of Kin: ${nextOfKin}\n`;
+            }
+            message += `\nPlease help me solve this electrical problem.`;
+            
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappUrl = `https://wa.me/25410373336?text=${encodedMessage}`;
+            window.open(whatsappUrl, '_blank');
+        });
+
+        // WhatsApp Integration for Quotation
+        document.getElementById('submit-quote').addEventListener('click', function() {
+            const quoteName = document.getElementById('quote-name').value;
+            const quoteEmail = document.getElementById('quote-email').value;
+            const quotePhone = document.getElementById('quote-phone').value;
+            const quoteLocation = document.getElementById('quote-location').value;
+            const quoteType = document.getElementById('quote-type').value;
+            const quoteBudget = document.getElementById('quote-budget').value;
+            const quoteTimeline = document.getElementById('quote-timeline').value;
+            const quoteDetails = document.getElementById('quote-details').value;
+            
+            let message = `*Iggy Power Solutions - Quotation Request*\n\n`;
+            message += `Name: ${quoteName || 'Not provided'}\n`;
+            message += `Email: ${quoteEmail || 'Not provided'}\n`;
+            message += `Phone: ${quotePhone || 'Not provided'}\n`;
+            message += `Location: ${quoteLocation || 'Not provided'}\n`;
+            message += `Service/Product: ${quoteType || 'Not specified'}\n`;
+            if (quoteBudget) {
+                message += `Budget: ${quoteBudget}\n`;
+            }
+            if (quoteTimeline) {
+                message += `Timeline: ${quoteTimeline}\n`;
+            }
+            message += `Details: ${quoteDetails || 'Not provided'}\n`;
+            
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappUrl = `https://wa.me/25410373336?text=${encodedMessage}`;
+            window.open(whatsappUrl, '_blank');
+        });
+
+        // WhatsApp Integration for Contact Form
+        document.getElementById('submit-contact').addEventListener('click', function() {
+            const contactName = document.getElementById('contact-name').value;
+            const contactEmail = document.getElementById('contact-email').value;
+            const contactSubject = document.getElementById('contact-subject').value;
+            const contactMessage = document.getElementById('contact-message').value;
+            
+            let message = `*Iggy Power Solutions - Contact Message*\n\n`;
+            message += `Name: ${contactName || 'Not provided'}\n`;
+            message += `Email: ${contactEmail || 'Not provided'}\n`;
+            message += `Subject: ${contactSubject || 'Not specified'}\n`;
+            message += `Message: ${contactMessage || 'Not provided'}\n`;
+            
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappUrl = `https://wa.me/25410373336?text=${encodedMessage}`;
+            window.open(whatsappUrl, '_blank');
+        });
+
+        // Toggle "Other" input fields
+        document.getElementById('problem-type').addEventListener('change', function() {
+            if (this.value === 'other') {
+                document.getElementById('other-problem-input').style.display = 'block';
+            } else {
+                document.getElementById('other-problem-input').style.display = 'none';
+            }
+        });
+
+        document.getElementById('quote-type').addEventListener('change', function() {
+            if (this.value === 'other') {
+                document.getElementById('other-quote-input').style.display = 'block';
+            } else {
+                document.getElementById('other-quote-input').style.display = 'none';
+            }
+        });
+
+        // Cart Functionality
+        const cartIcon = document.getElementById('cart-icon');
+        const cartModal = document.getElementById('cart-modal');
+        const closeCart = document.getElementById('close-cart');
+        const cartItems = document.querySelector('.cart-items');
         const cartTotalPrice = document.getElementById('cart-total-price');
+        const addToCartButtons = document.querySelectorAll('.add-to-cart');
+        const cartCount = document.querySelector('.cart-count');
+        const checkoutBtn = document.getElementById('checkout-btn');
         
-        cartItems.innerHTML = '';
-        
-        if (cart.length === 0) {
-            cartItems.innerHTML = '<p style="text-align: center; padding: 20px; color: var(--gray);">Your cart is empty</p>';
-            cartTotalPrice.textContent = 'KSh 0.00';
-            return;
-        }
-        
-        let total = 0;
-        
-        cart.forEach((item, index) => {
-            const itemTotal = item.price * item.quantity;
-            total += itemTotal;
-            
-            const cartItem = document.createElement('div');
-            cartItem.className = 'cart-item';
-            cartItem.innerHTML = `
-                <div class="cart-item-info">
-                    <div class="cart-item-img">
-                        <i class="${item.icon}"></i>
-                    </div>
-                    <div class="cart-item-details">
-                        <h4>${item.name}</h4>
-                        <div class="cart-item-price">KSh ${item.price.toFixed(2)}</div>
-                    </div>
-                </div>
-                <div class="cart-item-quantity">
-                    <button class="quantity-btn minus" data-index="${index}">-</button>
-                    <span>${item.quantity}</span>
-                    <button class="quantity-btn plus" data-index="${index}">+</button>
-                </div>
-                <div class="cart-item-total">$${itemTotal.toFixed(2)}</div>
-                <div class="remove-item" data-index="${index}"><i class="fas fa-trash"></i></div>
-            `;
-            
-            cartItems.appendChild(cartItem);
+        let cart = [];
+        let totalPrice = 0;
+
+        cartIcon.addEventListener('click', function() {
+            cartModal.style.display = 'flex';
+            updateCartDisplay();
         });
-        
-        cartTotalPrice.textContent = `KSh${total.toFixed(2)}`;
-        
-        // Add event listeners to quantity buttons and remove buttons
-        document.querySelectorAll('.quantity-btn.minus').forEach(btn => {
-            btn.addEventListener('click', function() {
-                const index = parseInt(this.getAttribute('data-index'));
-                if (cart[index].quantity > 1) {
-                    cart[index].quantity -= 1;
-                } else {
-                    cart.splice(index, 1);
-                }
-                updateCartDisplay();
-                updateCartCount();
-            });
+
+        closeCart.addEventListener('click', function() {
+            cartModal.style.display = 'none';
         });
-        
-        document.querySelectorAll('.quantity-btn.plus').forEach(btn => {
-            btn.addEventListener('click', function() {
-                const index = parseInt(this.getAttribute('data-index'));
-                cart[index].quantity += 1;
-                updateCartDisplay();
-                updateCartCount();
-            });
-        });
-        
-        document.querySelectorAll('.remove-item').forEach(btn => {
-            btn.addEventListener('click', function() {
-                const index = parseInt(this.getAttribute('data-index'));
-                cart.splice(index, 1);
-                updateCartDisplay();
-                updateCartCount();
-            });
-        });
-    }
-    
-    // Product detail functionality
-    const detailBtns = document.querySelectorAll('.detail-btn');
-    
-    detailBtns.forEach(btn => {
-        btn.addEventListener('click', function() {
-            const id = parseInt(this.getAttribute('data-id'));
-            
-            if (this.closest('.product-card')) {
-                // Product detail
-                showProductDetail(id);
-            } else {
-                // Service detail
-                showServiceDetail(id);
-            }
-        });
-    });
-    
-    function showProductDetail(id) {
-        const product = products.find(p => p.id === id);
-        
-        if (product) {
-            document.getElementById('detail-product-name').textContent = product.name;
-            document.getElementById('detail-product-price').textContent = `KSh${product.price.toFixed(2)}`;
-            document.getElementById('detail-product-description').textContent = product.description;
-            document.getElementById('product-detail-modal').querySelector('.product-detail-img i').className = product.icon;
-            
-            const specsList = document.getElementById('detail-product-specs');
-            specsList.innerHTML = '';
-            
-            product.specs.forEach(spec => {
-                const li = document.createElement('li');
-                li.innerHTML = `<i class="fas fa-check"></i> ${spec}`;
-                specsList.appendChild(li);
-            });
-            
-            // Update add to cart button in modal
-            const modalAddToCart = productDetailModal.querySelector('.add-to-cart');
-            modalAddToCart.onclick = function() {
-                const existingItem = cart.find(item => item.id === product.id);
+
+        // Add to cart functionality
+        addToCartButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const productCard = this.closest('.product-card');
+                const productName = productCard.querySelector('h3').textContent;
+                const productPrice = parseFloat(productCard.querySelector('.product-price').textContent.replace('KSh ', '').replace(',', ''));
+                
+                // Check if product is already in cart
+                const existingItem = cart.find(item => item.name === productName);
                 
                 if (existingItem) {
                     existingItem.quantity += 1;
                 } else {
                     cart.push({
-                        id: product.id,
-                        name: product.name,
-                        price: product.price,
-                        quantity: 1,
-                        icon: product.icon
+                        name: productName,
+                        price: productPrice,
+                        quantity: 1
                     });
                 }
                 
                 updateCartCount();
-                showNotification(`${product.name} added to cart!`);
-                cartModal.style.display = 'flex';
                 updateCartDisplay();
-            };
+                
+                // Show confirmation
+                alert(`${productName} added to cart!`);
+            });
+        });
+
+        // Checkout functionality
+        checkoutBtn.addEventListener('click', function() {
+            if (cart.length === 0) {
+                alert('Your cart is empty!');
+                return;
+            }
             
-            productDetailModal.style.display = 'flex';
-        }
-    }
-    
-    function showServiceDetail(id) {
-        const service = services.find(s => s.id === id);
-        
-        if (service) {
-            document.getElementById('detail-service-name').textContent = service.name;
-            document.getElementById('detail-service-price').textContent = `Starting at KSh${service.price.toFixed(2)}`;
-            document.getElementById('detail-service-description').textContent = service.description;
-            document.getElementById('service-detail-modal').querySelector('.service-detail-img i').className = service.icon;
+            let message = `*Iggy Power Solutions - Order*\n\n`;
+            message += `I would like to order the following items:\n\n`;
             
-            const featuresList = document.getElementById('detail-service-features');
-            featuresList.innerHTML = '';
-            
-            service.features.forEach(feature => {
-                const li = document.createElement('li');
-                li.innerHTML = `<i class="fas fa-check"></i> ${feature}`;
-                featuresList.appendChild(li);
+            cart.forEach(item => {
+                const itemTotal = item.price * item.quantity;
+                message += `• ${item.name} (x${item.quantity}) - KSh ${itemTotal.toLocaleString()}\n`;
             });
             
-            serviceDetailModal.style.display = 'flex';
+            message += `\nTotal: KSh ${totalPrice.toLocaleString()}\n\n`;
+            message += `Please confirm availability and provide payment details.`;
+            
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappUrl = `https://wa.me/25410373336?text=${encodedMessage}`;
+            window.open(whatsappUrl, '_blank');
+            
+            // Clear cart after checkout
+            cart = [];
+            updateCartCount();
+            updateCartDisplay();
+            cartModal.style.display = 'none';
+        });
+
+        function updateCartCount() {
+            const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+            cartCount.textContent = totalItems;
         }
-    }
-    
-    // Search functionality
-    searchInput.addEventListener('input', function() {
-        const query = this.value.toLowerCase();
-        
-        if (query.length < 2) {
-            searchResults.style.display = 'none';
-            return;
-        }
-        
-        const results = searchData.filter(item => 
-            item.name.toLowerCase().includes(query) || 
-            item.description.toLowerCase().includes(query)
-        );
-        
-        displaySearchResults(results);
-    });
-    
-    function displaySearchResults(results) {
-        searchResults.innerHTML = '';
-        
-        if (results.length === 0) {
-            const noResultItem = document.createElement('div');
-            noResultItem.className = 'search-result-item';
-            noResultItem.innerHTML = `
-                <div class="search-result-icon">
-                    <i class="fas fa-search"></i>
-                </div>
-                <div>
-                    <h4>No results found</h4>
-                    <p>Try different keywords</p>
-                </div>
-            `;
-            searchResults.appendChild(noResultItem);
-        } else {
-            results.forEach(item => {
-                const resultItem = document.createElement('div');
-                resultItem.className = 'search-result-item';
-                resultItem.innerHTML = `
-                    <div class="search-result-icon">
-                        <i class="${item.icon}"></i>
+
+        function updateCartDisplay() {
+            cartItems.innerHTML = '';
+            totalPrice = 0;
+            
+            if (cart.length === 0) {
+                cartItems.innerHTML = '<p>Your cart is empty</p>';
+                cartTotalPrice.textContent = 'KSh 0.00';
+                return;
+            }
+            
+            cart.forEach((item, index) => {
+                const itemTotal = item.price * item.quantity;
+                totalPrice += itemTotal;
+                
+                const cartItem = document.createElement('div');
+                cartItem.className = 'cart-item';
+                cartItem.innerHTML = `
+                    <div class="cart-item-info">
+                        <div class="cart-item-img">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <div class="cart-item-details">
+                            <h4>${item.name}</h4>
+                            <div class="cart-item-price">KSh ${item.price.toLocaleString()}</div>
+                        </div>
                     </div>
-                    <div>
-                        <h4>${item.name}</h4>
-                        <p>${item.description.substring(0, 80)}...</p>
-                        <small>${item.type === 'product' ? `KSh${item.price.toFixed(2)} • Product` : `Starting at KSh${item.price.toFixed(2)} • Service`}</small>
+                    <div class="cart-item-quantity">
+                        <button class="quantity-btn decrease" data-index="${index}">-</button>
+                        <span>${item.quantity}</span>
+                        <button class="quantity-btn increase" data-index="${index}">+</button>
+                        <button class="remove-item" data-index="${index}"><i class="fas fa-trash"></i></button>
                     </div>
                 `;
                 
-                resultItem.addEventListener('click', function() {
-                    if (item.type === 'product') {
-                        showProductDetail(item.id);
-                    } else {
-                        showServiceDetail(item.id);
+                cartItems.appendChild(cartItem);
+            });
+            
+            cartTotalPrice.textContent = `KSh ${totalPrice.toLocaleString()}`;
+            
+            // Add event listeners for quantity buttons
+            document.querySelectorAll('.quantity-btn.decrease').forEach(button => {
+                button.addEventListener('click', function() {
+                    const index = parseInt(this.getAttribute('data-index'));
+                    if (cart[index].quantity > 1) {
+                        cart[index].quantity -= 1;
+                        updateCartDisplay();
+                        updateCartCount();
                     }
-                    searchInput.value = '';
-                    searchResults.style.display = 'none';
                 });
-                
-                searchResults.appendChild(resultItem);
+            });
+            
+            document.querySelectorAll('.quantity-btn.increase').forEach(button => {
+                button.addEventListener('click', function() {
+                    const index = parseInt(this.getAttribute('data-index'));
+                    cart[index].quantity += 1;
+                    updateCartDisplay();
+                    updateCartCount();
+                });
+            });
+            
+            document.querySelectorAll('.remove-item').forEach(button => {
+                button.addEventListener('click', function() {
+                    const index = parseInt(this.getAttribute('data-index'));
+                    cart.splice(index, 1);
+                    updateCartDisplay();
+                    updateCartCount();
+                });
             });
         }
-        
-        searchResults.style.display = 'block';
-    }
-    
-    // Hide search results when clicking outside
-    document.addEventListener('click', function(e) {
-        if (!searchInput.contains(e.target) && !searchResults.contains(e.target)) {
-            searchResults.style.display = 'none';
-        }
-    });
-    
-    // Scroll to top functionality
-    window.addEventListener('scroll', function() {
-        if (window.pageYOffset > 300) {
-            scrollTopBtn.classList.add('active');
-        } else {
-            scrollTopBtn.classList.remove('active');
-        }
-    });
-    
-    scrollTopBtn.addEventListener('click', function() {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
+
+        // Product Categories Filter
+        const categoryButtons = document.querySelectorAll('.category-btn');
+        const productCards = document.querySelectorAll('.product-card');
+
+        categoryButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                // Remove active class from all buttons
+                categoryButtons.forEach(btn => btn.classList.remove('active'));
+                
+                // Add active class to clicked button
+                this.classList.add('active');
+                
+                const category = this.getAttribute('data-category');
+                
+                // Show/hide products based on category
+                productCards.forEach(card => {
+                    if (category === 'all' || card.getAttribute('data-category') === category) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
         });
-    });
-    
-    // Form submission
-    const forms = document.querySelectorAll('form');
-    
-    forms.forEach(form => {
-        form.addEventListener('submit', function(e) {
-            e.preventDefault();
-            showNotification("Form submitted successfully! We'll get back to you soon.");
-            this.reset();
-            
-            // Reset "Other" input fields
-            otherProblemInput.style.display = 'none';
-            otherServiceInput.style.display = 'none';
-            
-            // Reset photo and video previews
-            photoPreview.innerHTML = '<i class="fas fa-image" style="font-size: 2rem; color: rgba(255,255,255,0.5);"></i>';
-            videoPreview.innerHTML = '<i class="fas fa-video" style="font-size: 2rem; color: rgba(255,255,255,0.5);"></i>';
+
+        // Gallery Tabs
+        const galleryTabs = document.querySelectorAll('.gallery-tab');
+        const galleryContents = document.querySelectorAll('.gallery-content');
+
+        galleryTabs.forEach(tab => {
+            tab.addEventListener('click', function() {
+                const tabId = this.getAttribute('data-tab');
+                
+                // Remove active class from all tabs and contents
+                galleryTabs.forEach(t => t.classList.remove('active'));
+                galleryContents.forEach(c => c.classList.remove('active'));
+                
+                // Add active class to clicked tab and corresponding content
+                this.classList.add('active');
+                document.getElementById(`${tabId}-tab`).classList.add('active');
+            });
         });
-    });
-    
-    // Checkout functionality
-    const checkoutBtn = document.querySelector('.checkout-btn');
-    checkoutBtn.addEventListener('click', function() {
-        if (cart.length === 0) {
-            showNotification("Your cart is empty!");
-            return;
-        }
-        
-        let message = "Hello! I would like to purchase the following items:%0A%0A";
-        
-        cart.forEach(item => {
-            message += `• ${item.name} (x${item.quantity}) - KSh${(item.price * item.quantity).toFixed(2)}%0A`;
-        });
-        
-        const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-        message += `%0ATotal: KSh${total.toFixed(2)}%0A%0APlease confirm availability and provide payment details.`;
-        
-        // Open WhatsApp with the order message
-        window.open(`https://wa.me/25410373336?text=${encodeURIComponent(message)}`, '_blank');
-        
-        // Clear cart after checkout
-        cart = [];
-        updateCartCount();
-        updateCartDisplay();
-        cartModal.style.display = 'none';
-        
-        showNotification("Order sent via WhatsApp!");
-    });
-    
-    // Service booking functionality
-    const serviceBookBtns = document.querySelectorAll('.service-card .btn');
-    serviceBookBtns.forEach(btn => {
-        btn.addEventListener('click', function() {
-            const serviceCard = this.closest('.service-card');
-            const serviceName = serviceCard.querySelector('h3').textContent;
-            const servicePrice = serviceCard.querySelector('.service-price').textContent;
-            
-            const message = `Hello! I would like to book the ${serviceName} service (${servicePrice}). Please provide available dates and more details.`;
-            
-            window.open(`https://wa.me/25410373336?text=${encodeURIComponent(message)}`, '_blank');
-            
-            showNotification(`Booking request sent for ${serviceName}!`);
-        });
-    });
-    
-    // Notification function
-    function showNotification(message) {
-        // Remove existing notification if any
-        const existingNotification = document.querySelector('.custom-notification');
-        if (existingNotification) {
-            existingNotification.remove();
-        }
-        
-        const notification = document.createElement('div');
-        notification.className = 'custom-notification';
-        notification.style.cssText = `
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            background-color: var(--success);
-            color: white;
-            padding: 15px 20px;
-            border-radius: 5px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-            z-index: 3000;
-            transition: all 0.3s;
-            max-width: 300px;
-            font-weight: 500;
-        `;
-        notification.textContent = message;
-        
-        document.body.appendChild(notification);
-        
-        setTimeout(() => {
-            notification.style.opacity = '0';
-            notification.style.transform = 'translateX(100px)';
-            setTimeout(() => {
-                if (notification.parentNode) {
-                    document.body.removeChild(notification);
+
+        // Product and Service Detail Modals
+        const productModal = document.getElementById('product-modal');
+        const serviceModal = document.getElementById('service-modal');
+        const closeProduct = document.getElementById('close-product');
+        const closeService = document.getElementById('close-service');
+        const detailButtons = document.querySelectorAll('.detail-btn');
+
+        detailButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                if (this.getAttribute('data-product')) {
+                    // It's a product detail button
+                    const productId = this.getAttribute('data-product');
+                    const product = products[productId];
+                    
+                    if (product) {
+                        document.getElementById('detail-product-name').textContent = product.name;
+                        document.getElementById('detail-product-price').textContent = product.price;
+                        document.getElementById('detail-product-description').innerHTML = `<p>${product.description}</p>`;
+                        document.getElementById('detail-product-icon').className = product.icon;
+                        
+                        // Update specifications
+                        const specsList = document.getElementById('detail-product-specs');
+                        specsList.innerHTML = '';
+                        product.specs.forEach(spec => {
+                            const li = document.createElement('li');
+                            li.innerHTML = `<i class="fas fa-check"></i> ${spec}`;
+                            specsList.appendChild(li);
+                        });
+                        
+                        // Update actions based on stock status
+                        const actionsContainer = document.getElementById('detail-product-actions');
+                        actionsContainer.innerHTML = '';
+                        
+                        if (product.inStock) {
+                            const addToCartBtn = document.createElement('button');
+                            addToCartBtn.className = 'add-to-cart';
+                            addToCartBtn.innerHTML = '<i class="fas fa-cart-plus"></i> Add to Cart';
+                            addToCartBtn.addEventListener('click', function() {
+                                // Add to cart logic
+                                const existingItem = cart.find(item => item.name === product.name);
+                                
+                                if (existingItem) {
+                                    existingItem.quantity += 1;
+                                } else {
+                                    cart.push({
+                                        name: product.name,
+                                        price: parseFloat(product.price.replace('KSh ', '').replace(',', '')),
+                                        quantity: 1
+                                    });
+                                }
+                                
+                                updateCartCount();
+                                updateCartDisplay();
+                                productModal.style.display = 'none';
+                                alert(`${product.name} added to cart!`);
+                            });
+                            actionsContainer.appendChild(addToCartBtn);
+                        } else {
+                            const notifyBtn = document.createElement('button');
+                            notifyBtn.className = 'notify-btn';
+                            notifyBtn.innerHTML = '<i class="fab fa-whatsapp"></i> Notify Me';
+                            notifyBtn.setAttribute('data-product', product.name);
+                            notifyBtn.addEventListener('click', function() {
+                                const message = `*Iggy Power Solutions - Product Notification*\n\nHello, I'm interested in the ${product.name}. Please notify me when it's back in stock.`;
+                                const encodedMessage = encodeURIComponent(message);
+                                const whatsappUrl = `https://wa.me/25410373336?text=${encodedMessage}`;
+                                window.open(whatsappUrl, '_blank');
+                            });
+                            actionsContainer.appendChild(notifyBtn);
+                        }
+                        
+                        productModal.style.display = 'flex';
+                    }
+                } else if (this.getAttribute('data-service')) {
+                    // It's a service detail button
+                    const serviceId = this.getAttribute('data-service');
+                    const service = services[serviceId];
+                    
+                    if (service) {
+                        document.getElementById('detail-service-name').textContent = service.name;
+                        document.getElementById('detail-service-price').textContent = service.price;
+                        document.getElementById('detail-service-description').innerHTML = `<p>${service.description}</p>`;
+                        document.getElementById('detail-service-icon').className = service.icon;
+                        
+                        // Update features
+                        const featuresList = document.getElementById('detail-service-features');
+                        featuresList.innerHTML = '';
+                        service.features.forEach(feature => {
+                            const li = document.createElement('li');
+                            li.innerHTML = `<i class="fas fa-check"></i> ${feature}`;
+                            featuresList.appendChild(li);
+                        });
+                        
+                        // Update book button
+                        const bookBtn = document.getElementById('detail-service-book');
+                        bookBtn.setAttribute('data-service', service.name);
+                        
+                        serviceModal.style.display = 'flex';
+                    }
                 }
-            }, 300);
-        }, 3000);
-    }
-    
-    // Initialize
-    updateCartCount();
-    
-    // Add CSS for notification
-    const style = document.createElement('style');
-    style.textContent = `
-        .custom-notification {
-            animation: slideIn 0.3s ease-out;
-        }
-        
-        @keyframes slideIn {
-            from {
-                opacity: 0;
-                transform: translateX(100px);
+            });
+        });
+
+        // Service booking from detail modal
+        document.getElementById('detail-service-book').addEventListener('click', function() {
+            const serviceName = this.getAttribute('data-service');
+            const message = `*Iggy Power Solutions - Service Booking*\n\nHello, I would like to book the ${serviceName} service. Please provide more details.`;
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappUrl = `https://wa.me/25410373336?text=${encodedMessage}`;
+            window.open(whatsappUrl, '_blank');
+        });
+
+        closeProduct.addEventListener('click', function() {
+            productModal.style.display = 'none';
+        });
+
+        closeService.addEventListener('click', function() {
+            serviceModal.style.display = 'none';
+        });
+
+        // Scroll to Top Button
+        const scrollTop = document.getElementById('scroll-top');
+
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                scrollTop.classList.add('active');
+            } else {
+                scrollTop.classList.remove('active');
             }
-            to {
-                opacity: 1;
-                transform: translateX(0);
+        });
+
+        scrollTop.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Search Functionality
+        const searchInput = document.getElementById('search-input');
+        const searchResults = document.getElementById('search-results');
+
+        searchInput.addEventListener('input', function() {
+            const query = this.value.toLowerCase();
+            
+            if (query.length < 2) {
+                searchResults.style.display = 'none';
+                return;
             }
+            
+            // Search in products and services
+            const results = [];
+            
+            // Search products
+            Object.values(products).forEach(product => {
+                if (product.name.toLowerCase().includes(query) || 
+                    product.description.toLowerCase().includes(query)) {
+                    results.push({
+                        name: product.name,
+                        category: 'Product',
+                        type: 'product',
+                        data: product
+                    });
+                }
+            });
+            
+            // Search services
+            Object.values(services).forEach(service => {
+                if (service.name.toLowerCase().includes(query) || 
+                    service.description.toLowerCase().includes(query)) {
+                    results.push({
+                        name: service.name,
+                        category: 'Service',
+                        type: 'service',
+                        data: service
+                    });
+                }
+            });
+            
+            displaySearchResults(results);
+        });
+
+        function displaySearchResults(results) {
+            searchResults.innerHTML = '';
+            
+            if (results.length === 0) {
+                searchResults.innerHTML = '<div class="search-result-item">No results found</div>';
+            } else {
+                results.forEach(result => {
+                    const resultItem = document.createElement('div');
+                    resultItem.className = 'search-result-item';
+                    
+                    const icon = result.type === 'product' ? 'fas fa-box' : 'fas fa-tools';
+                    
+                    resultItem.innerHTML = `
+                        <i class="${icon} search-result-icon"></i>
+                        <div>
+                            <h4>${result.name}</h4>
+                            <p>${result.category}</p>
+                        </div>
+                    `;
+                    
+                    resultItem.addEventListener('click', function() {
+                        if (result.type === 'product') {
+                            // Find the product ID
+                            let productId = null;
+                            for (const [id, product] of Object.entries(products)) {
+                                if (product.name === result.name) {
+                                    productId = id;
+                                    break;
+                                }
+                            }
+                            
+                            if (productId) {
+                                // Trigger product detail modal
+                                const product = products[productId];
+                                document.getElementById('detail-product-name').textContent = product.name;
+                                document.getElementById('detail-product-price').textContent = product.price;
+                                document.getElementById('detail-product-description').innerHTML = `<p>${product.description}</p>`;
+                                document.getElementById('detail-product-icon').className = product.icon;
+                                
+                                // Update specifications
+                                const specsList = document.getElementById('detail-product-specs');
+                                specsList.innerHTML = '';
+                                product.specs.forEach(spec => {
+                                    const li = document.createElement('li');
+                                    li.innerHTML = `<i class="fas fa-check"></i> ${spec}`;
+                                    specsList.appendChild(li);
+                                });
+                                
+                                // Update actions based on stock status
+                                const actionsContainer = document.getElementById('detail-product-actions');
+                                actionsContainer.innerHTML = '';
+                                
+                                if (product.inStock) {
+                                    const addToCartBtn = document.createElement('button');
+                                    addToCartBtn.className = 'add-to-cart';
+                                    addToCartBtn.innerHTML = '<i class="fas fa-cart-plus"></i> Add to Cart';
+                                    addToCartBtn.addEventListener('click', function() {
+                                        // Add to cart logic
+                                        const existingItem = cart.find(item => item.name === product.name);
+                                        
+                                        if (existingItem) {
+                                            existingItem.quantity += 1;
+                                        } else {
+                                            cart.push({
+                                                name: product.name,
+                                                price: parseFloat(product.price.replace('KSh ', '').replace(',', '')),
+                                                quantity: 1
+                                            });
+                                        }
+                                        
+                                        updateCartCount();
+                                        updateCartDisplay();
+                                        productModal.style.display = 'none';
+                                        alert(`${product.name} added to cart!`);
+                                    });
+                                    actionsContainer.appendChild(addToCartBtn);
+                                } else {
+                                    const notifyBtn = document.createElement('button');
+                                    notifyBtn.className = 'notify-btn';
+                                    notifyBtn.innerHTML = '<i class="fab fa-whatsapp"></i> Notify Me';
+                                    notifyBtn.setAttribute('data-product', product.name);
+                                    notifyBtn.addEventListener('click', function() {
+                                        const message = `*Iggy Power Solutions - Product Notification*\n\nHello, I'm interested in the ${product.name}. Please notify me when it's back in stock.`;
+                                        const encodedMessage = encodeURIComponent(message);
+                                        const whatsappUrl = `https://wa.me/25410373336?text=${encodedMessage}`;
+                                        window.open(whatsappUrl, '_blank');
+                                    });
+                                    actionsContainer.appendChild(notifyBtn);
+                                }
+                                
+                                productModal.style.display = 'flex';
+                            }
+                        } else {
+                            // Find the service ID
+                            let serviceId = null;
+                            for (const [id, service] of Object.entries(services)) {
+                                if (service.name === result.name) {
+                                    serviceId = id;
+                                    break;
+                                }
+                            }
+                            
+                            if (serviceId) {
+                                // Trigger service detail modal
+                                const service = services[serviceId];
+                                document.getElementById('detail-service-name').textContent = service.name;
+                                document.getElementById('detail-service-price').textContent = service.price;
+                                document.getElementById('detail-service-description').innerHTML = `<p>${service.description}</p>`;
+                                document.getElementById('detail-service-icon').className = service.icon;
+                                
+                                // Update features
+                                const featuresList = document.getElementById('detail-service-features');
+                                featuresList.innerHTML = '';
+                                service.features.forEach(feature => {
+                                    const li = document.createElement('li');
+                                    li.innerHTML = `<i class="fas fa-check"></i> ${feature}`;
+                                    featuresList.appendChild(li);
+                                });
+                                
+                                // Update book button
+                                const bookBtn = document.getElementById('detail-service-book');
+                                bookBtn.setAttribute('data-service', service.name);
+                                
+                                serviceModal.style.display = 'flex';
+                            }
+                        }
+                        searchResults.style.display = 'none';
+                        searchInput.value = '';
+                    });
+                    
+                    searchResults.appendChild(resultItem);
+                });
+            }
+            
+            searchResults.style.display = 'block';
         }
-    `;
-    document.head.appendChild(style);
-</script>
+
+        // Close search results when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('.search-box')) {
+                searchResults.style.display = 'none';
+            }
+        });
+
+        // Close modals when clicking outside
+        window.addEventListener('click', function(e) {
+            if (e.target === cartModal) {
+                cartModal.style.display = 'none';
+            }
+            if (e.target === productModal) {
+                productModal.style.display = 'none';
+            }
+            if (e.target === serviceModal) {
+                serviceModal.style.display = 'none';
+            }
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    document.getElementById('nav-links').classList.remove('active');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
