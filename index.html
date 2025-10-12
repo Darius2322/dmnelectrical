@@ -107,33 +107,120 @@
             font-weight: 600;
         }
         
-        .search-cart {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
-        
-        .search-box {
-            position: relative;
-            width: 300px;
-        }
-        
-        .search-box input {
-            width: 100%;
-            padding: 10px 15px;
-            border-radius: 30px;
-            border: none;
-            outline: none;
-            font-size: 0.9rem;
-        }
-        
-        .search-box i {
-            position: absolute;
-            right: 15px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: var(--gray);
-        }
+/* Updated Search Cart - Single instance */
+.search-cart {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Updated Search Box with Increased Length */
+.search-box {
+    position: relative;
+    width: 400px; /* Increased from 300px */
+}
+
+.search-box input {
+    width: 100%;
+    padding: 12px 20px;
+    border-radius: 30px;
+    border: none;
+    outline: none;
+    font-size: 0.95rem;
+    background: rgba(255, 255, 255, 0.95);
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.search-box input:focus {
+    background: white;
+    box-shadow: 0 0 0 2px var(--primary), 0 4px 15px rgba(0, 0, 0, 0.15);
+    transform: translateY(-1px);
+}
+
+.search-box i {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--gray);
+    transition: color 0.3s ease;
+    font-size: 1rem;
+}
+
+.search-box input:focus + i {
+    color: var(--secondary);
+}
+
+.cart-icon {
+    position: relative;
+    font-size: 1.3rem;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.cart-icon:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: scale(1.05);
+}
+
+.cart-count {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: var(--primary);
+    color: var(--dark);
+    font-size: 0.7rem;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+/* Responsive design for larger search box */
+@media (max-width: 1024px) {
+    .search-box {
+        width: 350px;
+    }
+}
+
+@media (max-width: 768px) {
+    .search-box {
+        width: 280px;
+    }
+    
+    .header-content {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    
+    .search-cart {
+        order: 3;
+        width: 100%;
+        justify-content: space-between;
+        margin-top: 10px;
+    }
+    
+    .search-box {
+        width: calc(100% - 100px);
+    }
+}
+
+@media (max-width: 480px) {
+    .search-box {
+        width: calc(100% - 80px);
+    }
+    
+    .search-box input {
+        padding: 10px 16px;
+        font-size: 0.9rem;
+    }
+}
         
         .cart-icon {
             position: relative;
@@ -1195,16 +1282,336 @@
             transform: translateY(-5px);
         }
         
-        /* Responsive Design */
-        @media (max-width: 1024px) {
-            .hero h2 {
-                font-size: 2.5rem;
-            }
-            
-            .products-grid, .services-grid {
-                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            }
-        }
+        /* Mobile Menu Styles */
+.mobile-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--secondary);
+    z-index: 2000;
+    overflow-y: auto;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+}
+
+.mobile-menu.active {
+    transform: translateX(0);
+}
+
+.mobile-menu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: var(--dark);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.mobile-menu-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+}
+
+.mobile-menu-logo i {
+    color: var(--primary);
+    font-size: 1.5rem;
+}
+
+.close-menu {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.mobile-nav-links {
+    list-style: none;
+    padding: 20px;
+}
+
+.mobile-nav-links li {
+    margin-bottom: 15px;
+}
+
+.mobile-nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 15px;
+    border-radius: 5px;
+    transition: all 0.3s;
+}
+
+.mobile-nav-links a:hover {
+    background-color: rgba(255,255,255,0.1);
+    color: var(--primary);
+}
+
+.mobile-nav-links a i {
+    width: 20px;
+    text-align: center;
+}
+
+/* Mobile Toggle Button - Updated */
+.mobile-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.3rem;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 2001;
+}
+
+.mobile-toggle:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: scale(1.05);
+}
+
+.mobile-toggle:active {
+    transform: scale(0.95);
+}
+
+/* Mobile Menu Styles - Updated */
+.mobile-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--secondary) 0%, #002a7a 100%);
+    z-index: 2000;
+    overflow-y: auto;
+    transform: translateX(-100%);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: -5px 0 30px rgba(0, 0, 0, 0.3);
+}
+
+.mobile-menu.active {
+    transform: translateX(0);
+}
+
+.mobile-menu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.mobile-menu-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: white;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.mobile-menu-logo i {
+    color: var(--primary);
+    font-size: 1.4rem;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+.close-menu {
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: white;
+    font-size: 1.3rem;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.close-menu:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: rotate(90deg);
+}
+
+.close-menu:active {
+    transform: rotate(90deg) scale(0.95);
+}
+
+.mobile-nav-links {
+    list-style: none;
+    padding: 20px;
+    margin: 0;
+}
+
+.mobile-nav-links li {
+    margin-bottom: 8px;
+    opacity: 0;
+    transform: translateX(-20px);
+    animation: slideInRight 0.5s ease forwards;
+}
+
+.mobile-nav-links li:nth-child(1) { animation-delay: 0.1s; }
+.mobile-nav-links li:nth-child(2) { animation-delay: 0.15s; }
+.mobile-nav-links li:nth-child(3) { animation-delay: 0.2s; }
+.mobile-nav-links li:nth-child(4) { animation-delay: 0.25s; }
+.mobile-nav-links li:nth-child(5) { animation-delay: 0.3s; }
+.mobile-nav-links li:nth-child(6) { animation-delay: 0.35s; }
+.mobile-nav-links li:nth-child(7) { animation-delay: 0.4s; }
+
+@keyframes slideInRight {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.mobile-nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 16px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.mobile-nav-links a:hover {
+    background: rgba(255, 255, 255, 0.15);
+    color: var(--primary);
+    transform: translateX(8px);
+    border-color: rgba(255, 215, 0, 0.3);
+}
+
+.mobile-nav-links a:active {
+    transform: translateX(8px) scale(0.98);
+}
+
+.mobile-nav-links a i {
+    width: 20px;
+    text-align: center;
+    font-size: 1.1rem;
+    transition: transform 0.3s ease;
+}
+
+.mobile-nav-links a:hover i {
+    transform: scale(1.2);
+}
+
+/* Mobile menu background pattern */
+.mobile-menu::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 20% 80%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(0, 51, 160, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* Enhanced responsive design */
+@media (max-width: 768px) {
+    .mobile-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .mobile-menu {
+        display: block;
+    }
+    
+    /* Adjust header layout for mobile */
+    .header-content {
+        position: relative;
+        padding: 10px 0;
+    }
+    
+    .search-box {
+        width: 200px;
+    }
+    
+    .logo h1 {
+        font-size: 1.4rem;
+    }
+    
+    .logo-slogan {
+        font-size: 0.7rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .mobile-toggle {
+        width: 36px;
+        height: 36px;
+        font-size: 1.1rem;
+    }
+    
+    .mobile-menu-logo {
+        font-size: 1rem;
+    }
+    
+    .mobile-nav-links a {
+        font-size: 0.95rem;
+        padding: 12px 14px;
+    }
+    
+    .search-box {
+        width: 160px;
+    }
+}
+
+/* Add smooth transitions for body when menu opens */
+body.menu-open {
+    overflow: hidden;
+}
+
+/* Enhanced scrollbar for mobile menu */
+.mobile-menu::-webkit-scrollbar {
+    width: 4px;
+}
+
+.mobile-menu::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.mobile-menu::-webkit-scrollbar-thumb {
+    background: var(--primary);
+    border-radius: 2px;
+}
+
+.mobile-menu::-webkit-scrollbar-thumb:hover {
+    background: #e6c200;
+}
         
         @media (max-width: 768px) {
             .header-content {
@@ -1423,39 +1830,43 @@
 </head>
 <body>
     <!-- Header -->
-    <header>
-        <div class="container">
-            <div class="header-content">
-                <div class="logo">
-                    <div class="logo-img">
-                        <!-- EDITABLE: Logo Image -->
-                        <!-- Replace this div with your logo image -->
-                        <!-- <img src="your-logo.png" alt="Iggy Power Solutions" style="width: 100%; height: 100%; object-fit: contain;"> -->
-                        IPS
-                    </div>
-                    <div class="logo-text">
-                        <h1>Iggy Power Solutions</h1>
-                        <!-- EDITABLE: Slogan -->
-                        <div class="logo-slogan">Powering Your World with Reliable Energy Solutions</div>
-                    </div>
+  <!-- Header -->
+<header>
+    <div class="container">
+        <div class="header-content">
+            <div class="logo">
+                <div class="logo-img">
+                    <!-- EDITABLE: Logo Image -->
+                    <!-- Replace this div with your logo image -->
+                    <!-- <img src="your-logo.png" alt="Iggy Power Solutions" style="width: 100%; height: 100%; object-fit: contain;"> -->
+                    IPS
                 </div>
-                <div class="search-cart">
-                    <div class="search-box">
-                        <input type="text" id="search-input" placeholder="Search products, services...">
-                        <i class="fas fa-search"></i>
-                        <div class="search-results" id="search-results"></div>
-                    </div>
-                    <div class="cart-icon" id="cart-icon">
-                        <i class="fas fa-shopping-cart"></i>
-                        <span class="cart-count">0</span>
-                    </div>
-                    <button class="mobile-toggle" id="mobile-toggle">
-                        <i class="fas fa-bars"></i>
-                    </button>
+                <div class="logo-text">
+                    <h1>Iggy Power Solutions</h1>
+                    <!-- EDITABLE: Slogan -->
+                    <div class="logo-slogan">Powering Your World with Reliable Energy Solutions</div>
                 </div>
             </div>
+            
+            <!-- Single search and cart section -->
+            <div class="search-cart">
+                <div class="search-box">
+                    <input type="text" id="search-input" placeholder="Search products, services...">
+                    <i class="fas fa-search"></i>
+                    <div class="search-results" id="search-results"></div>
+                </div>
+                <div class="cart-icon" id="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </div>
+                <!-- Mobile toggle button -->
+                <button class="mobile-toggle" id="mobile-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
         </div>
-    </header>
+    </div>
+</header>
 
     <!-- Navigation -->
     <nav>
@@ -1471,6 +1882,28 @@
             </ul>
         </div>
     </nav>
+
+    <!-- Mobile Menu -->
+<div class="mobile-menu" id="mobile-menu">
+    <div class="mobile-menu-header">
+        <div class="mobile-menu-logo">
+            <i class="fas fa-bolt"></i>
+            <span>Iggy Power Solutions</span>
+        </div>
+        <button class="close-menu" id="close-menu">
+            <i class="fas fa-times"></i>
+        </button>
+    </div>
+    <ul class="mobile-nav-links">
+        <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
+        <li><a href="#products"><i class="fas fa-box"></i> Products</a></li>
+        <li><a href="#services"><i class="fas fa-tools"></i> Services</a></li>
+        <li><a href="#gallery"><i class="fas fa-images"></i> Gallery</a></li>
+        <li><a href="#problem-solver"><i class="fas fa-bolt"></i> Problem Solver</a></li>
+        <li><a href="#quotation"><i class="fas fa-file-invoice-dollar"></i> Quotation</a></li>
+        <li><a href="#contact"><i class="fas fa-phone-alt"></i> Contact</a></li>
+    </ul>
+</div>
 
     <!-- Hero Section -->
     <section class="hero" id="home">
@@ -2437,11 +2870,63 @@
             }
         };
 
-        // Mobile Toggle Menu
-        document.getElementById('mobile-toggle').addEventListener('click', function() {
-            document.getElementById('nav-links').classList.toggle('active');
-        });
+   // Mobile Menu Functionality
+const mobileToggle = document.getElementById('mobile-toggle');
+const mobileMenu = document.getElementById('mobile-menu');
+const closeMenu = document.getElementById('close-menu');
+const mobileNavLinks = document.querySelectorAll('.mobile-nav-links a');
 
+// Open mobile menu
+mobileToggle.addEventListener('click', function() {
+    mobileMenu.classList.add('active');
+    document.body.style.overflow = 'hidden'; // Prevent background scrolling
+});
+
+// Close mobile menu
+closeMenu.addEventListener('click', function() {
+    mobileMenu.classList.remove('active');
+    document.body.style.overflow = ''; // Restore scrolling
+});
+
+// Close menu when clicking on links
+mobileNavLinks.forEach(link => {
+    link.addEventListener('click', function() {
+        mobileMenu.classList.remove('active');
+        document.body.style.overflow = '';
+    });
+});
+
+// Close menu when clicking outside
+mobileMenu.addEventListener('click', function(e) {
+    if (e.target === mobileMenu) {
+        mobileMenu.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+});
+
+// Smooth scrolling for mobile menu links
+mobileNavLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+            // Close menu first
+            mobileMenu.classList.remove('active');
+            document.body.style.overflow = '';
+            
+            // Then scroll to target
+            setTimeout(() => {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }, 300);
+        }
+    });
+});
         // Camera Functionality for Problem Solver
         const startCamera = document.getElementById('start-camera');
         const video = document.getElementById('video');
