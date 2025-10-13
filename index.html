@@ -48,338 +48,163 @@
         }
         
         /* Header Styles */
-  /* Header Styles */
-/* Header Styles - ALL SCREENS */
-header {
-    background-color: var(--secondary);
-    color: white;
-    padding: 15px 0;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    transition: all 0.3s ease;
-}
+        header {
+            background-color: var(--secondary);
+            color: white;
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
 
-.header-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 30px;
-}
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
 
-.logo {
-    display: flex;
-    align-items: center;
-    flex: 0 1 auto;
-    min-width: 200px;
-}
+        .logo {
+            display: flex;
+            align-items: center;
+            flex: 0 1 auto;
+            min-width: 180px;
+        }
 
-.logo-img {
-    width: 50px;
-    height: 50px;
-    background-color: var(--primary);
-    border-radius: 50%;
-    margin-right: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: var(--secondary);
-    font-weight: bold;
-    font-size: 1.2rem;
-}
+        .logo-img {
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary);
+            border-radius: 50%;
+            margin-right: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--secondary);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
 
-.logo-text {
-    display: flex;
-    flex-direction: column;
-}
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
 
-.logo-slogan {
-    font-size: 0.8rem;
-    opacity: 0.8;
-    margin-top: 2px;
-}
+        .logo-slogan {
+            font-size: 0.8rem;
+            opacity: 0.8;
+            margin-top: 2px;
+        }
 
-.logo h1 {
-    font-size: 1.8rem;
-    font-weight: 600;
-}
+        .logo h1 {
+            font-size: 1.8rem;
+            font-weight: 600;
+        }
 
-/* Header Right Section */
-.header-right {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    flex: 1;
-    justify-content: flex-end;
-}
+        /* Header Right Section */
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            flex: 1;
+            justify-content: flex-end;
+        }
 
-/* Search Box */
-.search-box {
-    position: relative;
-    width: 400px;
-    margin-right: 15px;
-}
+        /* Search Box */
+        .search-box {
+            position: relative;
+            width: 400px;
+            margin-right: 10px;
+        }
 
-.search-box input {
-    width: 100%;
-    padding: 12px 20px;
-    border-radius: 30px;
-    border: none;
-    outline: none;
-    font-size: 0.95rem;
-    background: rgba(255, 255, 255, 0.95);
-    transition: all 0.3s ease;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
+        .search-box input {
+            width: 100%;
+            padding: 12px 20px;
+            border-radius: 30px;
+            border: none;
+            outline: none;
+            font-size: 0.95rem;
+            background: rgba(255, 255, 255, 0.95);
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
 
-.search-box input:focus {
-    background: white;
-    box-shadow: 0 0 0 2px var(--primary), 0 4px 15px rgba(0, 0, 0, 0.15);
-    transform: translateY(-1px);
-}
+        .search-box input:focus {
+            background: white;
+            box-shadow: 0 0 0 2px var(--primary), 0 4px 15px rgba(0, 0, 0, 0.15);
+            transform: translateY(-1px);
+        }
 
-.search-box i {
-    position: absolute;
-    right: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: var(--gray);
-    transition: color 0.3s ease;
-    font-size: 1rem;
-}
+        .search-box i {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--gray);
+            transition: color 0.3s ease;
+            font-size: 1rem;
+        }
 
-.search-box input:focus + i {
-    color: var(--secondary);
-}
+        .search-box input:focus + i {
+            color: var(--secondary);
+        }
 
-/* Cart Icon */
-.cart-icon {
-    position: relative;
-    font-size: 1.3rem;
-    cursor: pointer;
-    padding: 8px;
-    border-radius: 8px;
-    transition: all 0.3s ease;
-    margin-right: 15px;
-}
+        /* Cart Icon */
+        .cart-icon {
+            position: relative;
+            font-size: 1.3rem;
+            cursor: pointer;
+            padding: 8px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            margin-right: 10px;
+        }
 
-.cart-icon:hover {
-    background: rgba(255, 255, 255, 0.1);
-    transform: scale(1.05);
-}
+        .cart-icon:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: scale(1.05);
+        }
 
-.cart-count {
-    position: absolute;
-    top: -8px;
-    right: -8px;
-    background-color: var(--primary);
-    color: var(--dark);
-    font-size: 0.7rem;
-    width: 18px;
-    height: 18px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: bold;
-}
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background-color: var(--primary);
+            color: var(--dark);
+            font-size: 0.7rem;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+        }
 
-/* Mobile Toggle Button */
-.mobile-toggle {
-    display: none;
-    background: none;
-    border: none;
-    color: white;
-    font-size: 1.3rem;
-    cursor: pointer;
-    width: 40px;
-    height: 40px;
-    border-radius: 8px;
-    transition: all 0.3s ease;
-    position: relative;
-    z-index: 2001;
-}
+        /* Mobile Toggle Button */
+        .mobile-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.3rem;
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 2001;
+            margin-right: 10px;
+        }
 
-.mobile-toggle:hover {
-    background: rgba(255, 255, 255, 0.1);
-    transform: scale(1.05);
-}
+        .mobile-toggle:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: scale(1.05);
+        }
 
-/* RESPONSIVE DESIGN - ALL SCREENS */
-
-/* Large Tablets and Small Laptops */
-@media (max-width: 1024px) {
-    .search-box {
-        width: 350px;
-    }
-    
-    .logo {
-        min-width: 180px;
-    }
-    
-    .logo h1 {
-        font-size: 1.6rem;
-    }
-}
-
-/* Tablets */
-@media (max-width: 768px) {
-    .mobile-toggle {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    
-    .search-box {
-        width: 250px;
-        margin-right: 10px;
-    }
-    
-    .header-right {
-        gap: 15px;
-    }
-    
-    .logo {
-        min-width: 160px;
-    }
-    
-    .logo h1 {
-        font-size: 1.4rem;
-    }
-    
-    .logo-slogan {
-        font-size: 0.75rem;
-    }
-    
-    .logo-img {
-        width: 45px;
-        height: 45px;
-        font-size: 1.1rem;
-    }
-    
-    .cart-icon {
-        margin-right: 10px;
-        font-size: 1.2rem;
-    }
-}
-
-/* Large Mobile */
-@media (max-width: 640px) {
-    .header-content {
-        gap: 20px;
-    }
-    
-    .search-box {
-        width: 200px;
-    }
-    
-    .logo {
-        min-width: 140px;
-    }
-    
-    .logo h1 {
-        font-size: 1.3rem;
-    }
-    
-    .logo-slogan {
-        display: none; /* Hide slogan on smaller screens */
-    }
-    
-    .logo-img {
-        width: 40px;
-        height: 40px;
-        font-size: 1rem;
-        margin-right: 8px;
-    }
-}
-
-/* Medium Mobile */
-@media (max-width: 480px) {
-    .header-content {
-        gap: 15px;
-    }
-    
-    .search-box {
-        width: 150px;
-    }
-    
-    .search-box input {
-        padding: 10px 15px;
-        font-size: 0.9rem;
-    }
-    
-    .logo {
-        min-width: auto;
-        flex: 1;
-    }
-    
-    .logo h1 {
-        font-size: 1.2rem;
-    }
-    
-    .header-right {
-        gap: 10px;
-    }
-    
-    .cart-icon {
-        margin-right: 5px;
-        padding: 6px;
-        font-size: 1.1rem;
-    }
-    
-    .mobile-toggle {
-        width: 36px;
-        height: 36px;
-        font-size: 1.1rem;
-    }
-}
-
-/* Small Mobile */
-@media (max-width: 360px) {
-    .search-box {
-        width: 120px;
-    }
-    
-    .search-box input {
-        padding: 8px 12px;
-        font-size: 0.85rem;
-    }
-    
-    .logo h1 {
-        font-size: 1.1rem;
-    }
-    
-    .logo-img {
-        width: 35px;
-        height: 35px;
-        font-size: 0.9rem;
-        margin-right: 5px;
-    }
-    
-    .header-right {
-        gap: 8px;
-    }
-    
-    .cart-icon {
-        margin-right: 3px;
-    }
-}
-
-/* Extra Small Mobile */
-@media (max-width: 320px) {
-    .search-box {
-        width: 100px;
-    }
-    
-    .search-box input::placeholder {
-        font-size: 0.8rem;
-    }
-    
-    .logo h1 {
-        font-size: 1rem;
-    }
-}
         /* Navigation */
         nav {
             background-color: var(--dark);
@@ -406,7 +231,124 @@ header {
         .nav-links a:hover {
             color: var(--primary);
         }
-        
+
+        /* Mobile Menu */
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 280px;
+            height: 100%;
+            background: linear-gradient(135deg, var(--secondary) 0%, #002a7a 100%);
+            z-index: 2000;
+            overflow-y: auto;
+            transform: translateX(100%);
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: -5px 0 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .mobile-menu.active {
+            transform: translateX(0);
+        }
+
+        .mobile-menu-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.2);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .mobile-menu-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: white;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .mobile-menu-logo i {
+            color: var(--primary);
+            font-size: 1.4rem;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+        }
+
+        .close-menu {
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            color: white;
+            font-size: 1.3rem;
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .close-menu:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: rotate(90deg);
+        }
+
+        .mobile-nav-links {
+            list-style: none;
+            padding: 20px;
+            margin: 0;
+        }
+
+        .mobile-nav-links li {
+            margin-bottom: 8px;
+            opacity: 0;
+            transform: translateX(20px);
+            animation: slideInLeft 0.5s ease forwards;
+        }
+
+        .mobile-nav-links li:nth-child(1) { animation-delay: 0.1s; }
+        .mobile-nav-links li:nth-child(2) { animation-delay: 0.15s; }
+        .mobile-nav-links li:nth-child(3) { animation-delay: 0.2s; }
+        .mobile-nav-links li:nth-child(4) { animation-delay: 0.25s; }
+        .mobile-nav-links li:nth-child(5) { animation-delay: 0.3s; }
+        .mobile-nav-links li:nth-child(6) { animation-delay: 0.35s; }
+        .mobile-nav-links li:nth-child(7) { animation-delay: 0.4s; }
+
+        @keyframes slideInLeft {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .mobile-nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 14px 16px;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .mobile-nav-links a:hover {
+            background: rgba(255, 255, 255, 0.15);
+            color: var(--primary);
+            transform: translateX(-8px);
+            border-color: rgba(255, 215, 0, 0.3);
+        }
+
         /* Hero Section */
         .hero {
             background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1621905252507-b35492cc74b4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80');
@@ -555,9 +497,10 @@ header {
             background-color: #f0f0f0;
         }
         
+        /* Products Grid - 2 columns layout */
         .products-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            grid-template-columns: repeat(2, 1fr);
             gap: 30px;
             margin-bottom: 50px;
         }
@@ -712,9 +655,10 @@ header {
             z-index: 0;
         }
         
+        /* Services Grid - 2 columns layout */
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(2, 1fr);
             gap: 30px;
             position: relative;
             z-index: 1;
@@ -897,36 +841,94 @@ header {
             color: rgba(255,255,255,0.7);
         }
         
-        .photo-upload, .video-upload {
+        /* Enhanced Camera Interface */
+        .camera-container {
             display: flex;
             flex-direction: column;
             align-items: center;
             gap: 15px;
             margin-bottom: 20px;
+            width: 100%;
         }
         
-        .photo-preview, .video-preview {
-            width: 200px;
-            height: 150px;
-            border: 2px dashed rgba(255,255,255,0.5);
+        #camera-preview, #video-recorder {
+            width: 100%;
+            max-width: 400px;
+            height: 300px;
+            background-color: #000;
             border-radius: 10px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
             overflow: hidden;
+            position: relative;
         }
         
-        .photo-preview img, .video-preview video {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
+        #camera-preview video, #video-recorder video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
         
-        .photo-actions, .video-actions {
+        .camera-controls, .video-controls {
             display: flex;
             gap: 10px;
             flex-wrap: wrap;
             justify-content: center;
+            width: 100%;
+        }
+        
+        #captured-image {
+            max-width: 100%;
+            max-height: 300px;
+            border-radius: 10px;
+            display: none;
+        }
+        
+        .camera-switch, .video-switch {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(0,0,0,0.5);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 10;
+        }
+        
+        .discard-btn {
+            background-color: var(--danger);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            justify-content: center;
+        }
+        
+        .discard-btn:hover {
+            background-color: #c82333;
+        }
+        
+        .captured-media-container {
+            position: relative;
+            display: inline-block;
+            margin-top: 10px;
+        }
+        
+        .media-actions {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            display: flex;
+            gap: 5px;
         }
         
         /* Quotation Section */
@@ -1206,13 +1208,6 @@ header {
             color: var(--primary);
         }
         
-        .contact-info {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-bottom: 10px;
-        }
-        
         .social-icons {
             display: flex;
             gap: 15px;
@@ -1312,70 +1307,70 @@ header {
             color: var(--success);
         }
         
-     /* Search Results */
-    .search-results {
-        display: none;
-        background-color: white;
-        border-radius: 10px;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        max-height: 300px;
-        overflow-y: auto;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        z-index: 100;
-    }
+        /* Search Results */
+        .search-results {
+            display: none;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            max-height: 300px;
+            overflow-y: auto;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            z-index: 100;
+        }
 
-    .search-result-item {
-        padding: 12px 15px;
-        border-bottom: 1px solid #eee;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        color: var(--dark);
-        background-color: white;
-        transition: background-color 0.3s;
-    }
+        .search-result-item {
+            padding: 12px 15px;
+            border-bottom: 1px solid #eee;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--dark);
+            background-color: white;
+            transition: background-color 0.3s;
+        }
 
-    .search-result-item:hover {
-        background-color: #f5f5f5;
-    }
+        .search-result-item:hover {
+            background-color: #f5f5f5;
+        }
 
-    .search-result-item:last-child {
-        border-bottom: none;
-    }
+        .search-result-item:last-child {
+            border-bottom: none;
+        }
 
-    .search-result-icon {
-        font-size: 1.2rem;
-        color: var(--secondary);
-        flex-shrink: 0;
-    }
+        .search-result-icon {
+            font-size: 1.2rem;
+            color: var(--secondary);
+            flex-shrink: 0;
+        }
 
-    .search-result-item > div {
-        flex: 1;
-    }
+        .search-result-item > div {
+            flex: 1;
+        }
 
-    .search-result-item h4 {
-        color: var(--dark);
-        margin-bottom: 4px;
-        font-size: 1rem;
-        font-weight: 600;
-    }
+        .search-result-item h4 {
+            color: var(--dark);
+            margin-bottom: 4px;
+            font-size: 1rem;
+            font-weight: 600;
+        }
 
-    .search-result-item p {
-        color: var(--gray);
-        font-size: 0.85rem;
-        margin-bottom: 4px;
-        line-height: 1.4;
-    }
+        .search-result-item p {
+            color: var(--gray);
+            font-size: 0.85rem;
+            margin-bottom: 4px;
+            line-height: 1.4;
+        }
 
-    .search-result-item small {
-        color: var(--secondary);
-        font-weight: 500;
-        font-size: 0.8rem;
-    }
+        .search-result-item small {
+            color: var(--secondary);
+            font-weight: 500;
+            font-size: 0.8rem;
+        }
         
         /* Scroll to top button */
         .scroll-top {
@@ -1408,455 +1403,40 @@ header {
             transform: translateY(-5px);
         }
         
-        /* Mobile Menu Styles */
-.mobile-menu {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: var(--secondary);
-    z-index: 2000;
-    overflow-y: auto;
-    transform: translateX(-100%);
-    transition: transform 0.3s ease;
-}
-
-.mobile-menu.active {
-    transform: translateX(0);
-}
-
-.mobile-menu-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    background-color: var(--dark);
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-}
-
-.mobile-menu-logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    color: white;
-}
-
-.mobile-menu-logo i {
-    color: var(--primary);
-    font-size: 1.5rem;
-}
-
-.close-menu {
-    background: none;
-    border: none;
-    color: white;
-    font-size: 1.5rem;
-    cursor: pointer;
-}
-
-.mobile-nav-links {
-    list-style: none;
-    padding: 20px;
-}
-
-.mobile-nav-links li {
-    margin-bottom: 15px;
-}
-
-.mobile-nav-links a {
-    color: white;
-    text-decoration: none;
-    font-size: 1.1rem;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 12px 15px;
-    border-radius: 5px;
-    transition: all 0.3s;
-}
-
-.mobile-nav-links a:hover {
-    background-color: rgba(255,255,255,0.1);
-    color: var(--primary);
-}
-
-.mobile-nav-links a i {
-    width: 20px;
-    text-align: center;
-}
-
-/* Mobile Toggle Button - Updated */
-.mobile-toggle {
-    display: none;
-    background: none;
-    border: none;
-    color: white;
-    font-size: 1.3rem;
-    cursor: pointer;
-    width: 40px;
-    height: 40px;
-    border-radius: 8px;
-    transition: all 0.3s ease;
-    position: relative;
-    z-index: 2001;
-}
-
-.mobile-toggle:hover {
-    background: rgba(255, 255, 255, 0.1);
-    transform: scale(1.05);
-}
-
-.mobile-toggle:active {
-    transform: scale(0.95);
-}
-
-/* Mobile Menu Styles - Updated */
-.mobile-menu {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, var(--secondary) 0%, #002a7a 100%);
-    z-index: 2000;
-    overflow-y: auto;
-    transform: translateX(-100%);
-    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: -5px 0 30px rgba(0, 0, 0, 0.3);
-}
-
-.mobile-menu.active {
-    transform: translateX(0);
-}
-
-.mobile-menu-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    background: rgba(0, 0, 0, 0.2);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-}
-
-.mobile-menu-logo {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    color: white;
-    font-weight: 600;
-    font-size: 1.1rem;
-}
-
-.mobile-menu-logo i {
-    color: var(--primary);
-    font-size: 1.4rem;
-    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
-}
-
-.close-menu {
-    background: rgba(255, 255, 255, 0.1);
-    border: none;
-    color: white;
-    font-size: 1.3rem;
-    cursor: pointer;
-    width: 40px;
-    height: 40px;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-    backdrop-filter: blur(10px);
-}
-
-.close-menu:hover {
-    background: rgba(255, 255, 255, 0.2);
-    transform: rotate(90deg);
-}
-
-.close-menu:active {
-    transform: rotate(90deg) scale(0.95);
-}
-
-.mobile-nav-links {
-    list-style: none;
-    padding: 20px;
-    margin: 0;
-}
-
-.mobile-nav-links li {
-    margin-bottom: 8px;
-    opacity: 0;
-    transform: translateX(-20px);
-    animation: slideInRight 0.5s ease forwards;
-}
-
-.mobile-nav-links li:nth-child(1) { animation-delay: 0.1s; }
-.mobile-nav-links li:nth-child(2) { animation-delay: 0.15s; }
-.mobile-nav-links li:nth-child(3) { animation-delay: 0.2s; }
-.mobile-nav-links li:nth-child(4) { animation-delay: 0.25s; }
-.mobile-nav-links li:nth-child(5) { animation-delay: 0.3s; }
-.mobile-nav-links li:nth-child(6) { animation-delay: 0.35s; }
-.mobile-nav-links li:nth-child(7) { animation-delay: 0.4s; }
-
-@keyframes slideInRight {
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-.mobile-nav-links a {
-    color: white;
-    text-decoration: none;
-    font-size: 1rem;
-    font-weight: 500;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 14px 16px;
-    border-radius: 10px;
-    transition: all 0.3s ease;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-}
-
-.mobile-nav-links a:hover {
-    background: rgba(255, 255, 255, 0.15);
-    color: var(--primary);
-    transform: translateX(8px);
-    border-color: rgba(255, 215, 0, 0.3);
-}
-
-.mobile-nav-links a:active {
-    transform: translateX(8px) scale(0.98);
-}
-
-.mobile-nav-links a i {
-    width: 20px;
-    text-align: center;
-    font-size: 1.1rem;
-    transition: transform 0.3s ease;
-}
-
-.mobile-nav-links a:hover i {
-    transform: scale(1.2);
-}
-
-/* Mobile menu background pattern */
-.mobile-menu::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: 
-        radial-gradient(circle at 20% 80%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 80% 20%, rgba(0, 51, 160, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 40% 40%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
-    pointer-events: none;
-    z-index: -1;
-}
-
-/* Enhanced responsive design */
-@media (max-width: 768px) {
-    .mobile-toggle {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    
-    .mobile-menu {
-        display: block;
-    }
-    
-    /* Adjust header layout for mobile */
-    .header-content {
-        position: relative;
-        padding: 10px 0;
-    }
-    
-    .search-box {
-        width: 200px;
-    }
-    
-    .logo h1 {
-        font-size: 1.4rem;
-    }
-    
-    .logo-slogan {
-        font-size: 0.7rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .mobile-toggle {
-        width: 36px;
-        height: 36px;
-        font-size: 1.1rem;
-    }
-    
-    .mobile-menu-logo {
-        font-size: 1rem;
-    }
-    
-    .mobile-nav-links a {
-        font-size: 0.95rem;
-        padding: 12px 14px;
-    }
-    
-    .search-box {
-        width: 160px;
-    }
-}
-
-/* Add smooth transitions for body when menu opens */
-body.menu-open {
-    overflow: hidden;
-}
-
-/* Enhanced scrollbar for mobile menu */
-.mobile-menu::-webkit-scrollbar {
-    width: 4px;
-}
-
-.mobile-menu::-webkit-scrollbar-track {
-    background: rgba(255, 255, 255, 0.1);
-}
-
-.mobile-menu::-webkit-scrollbar-thumb {
-    background: var(--primary);
-    border-radius: 2px;
-}
-
-.mobile-menu::-webkit-scrollbar-thumb:hover {
-    background: #e6c200;
-}
-        
-        @media (max-width: 768px) {
-            .header-content {
-                flex-direction: column;
-                gap: 15px;
-            }
-            
-            .mobile-toggle {
-                display: block;
-                position: absolute;
-                top: 15px;
-                right: 15px;
-            }
-            
-            .nav-links {
-                display: none;
-                flex-direction: column;
-                gap: 10px;
-                width: 100%;
-            }
-            
-            .nav-links.active {
-                display: flex;
-            }
-            
-            .search-box {
-                width: 100%;
-            }
-            
-            .hero h2 {
-                font-size: 2.2rem;
-            }
-            
-            .hero p {
-                font-size: 1rem;
-            }
-            
-            .hero-features {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .product-detail, .service-detail {
-                flex-direction: column;
-            }
-            
-            .gallery-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .contact-buttons {
-                flex-direction: column;
-            }
-            
-            .form-row {
-                flex-direction: column;
-                gap: 0;
-            }
-            
-            /* Mobile product/service display */
-            .products-grid, .services-grid {
-                grid-template-columns: 1fr;
-            }
+        /* Notification Toast - Positioned top left */
+        .toast {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background-color: var(--success);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 5px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            z-index: 1001;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
         }
         
-        @media (max-width: 480px) {
-            .logo h1 {
-                font-size: 1.5rem;
-            }
-            
-            .logo-slogan {
-                font-size: 0.7rem;
-            }
-            
-            .hero h2 {
-                font-size: 1.8rem;
-            }
-            
-            .hero p {
-                font-size: 0.9rem;
-            }
-            
-            .section-title {
-                font-size: 1.6rem;
-            }
-            
-            .products-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .product-actions {
-                flex-direction: column;
-            }
-            
-            .service-actions {
-                flex-direction: column;
-            }
-            
-            .photo-actions, .video-actions {
-                flex-direction: column;
-            }
+        .toast.show {
+            opacity: 1;
+            visibility: visible;
         }
         
-        /* Animation for electric effect */
-        @keyframes electricPulse {
-            0% { text-shadow: 0 0 5px var(--electric-blue); }
-            50% { text-shadow: 0 0 20px var(--electric-yellow), 0 0 30px var(--electric-blue); }
-            100% { text-shadow: 0 0 5px var(--electric-blue); }
+        .toast.error {
+            background-color: var(--danger);
         }
         
-        .electric-text {
-            animation: electricPulse 2s infinite;
+        .toast.warning {
+            background-color: var(--warning);
+            color: var(--dark);
         }
         
-        /* Custom dropdown styling - FIXED */
+        /* Custom dropdown styling */
         .custom-dropdown {
             position: relative;
             width: 100%;
@@ -1888,44 +1468,6 @@ body.menu-open {
             background-color: rgba(255,255,255,0.9);
         }
         
-        /* Camera interface styling */
-        .camera-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 20px;
-        }
-        
-        #camera-preview {
-            width: 100%;
-            max-width: 400px;
-            height: 300px;
-            background-color: #000;
-            border-radius: 10px;
-            overflow: hidden;
-        }
-        
-        #camera-preview video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        
-        .camera-controls {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-        
-        #captured-image {
-            max-width: 100%;
-            max-height: 300px;
-            border-radius: 10px;
-            display: none;
-        }
-        
         /* Other input field */
         .other-input {
             margin-top: 10px;
@@ -1952,38 +1494,304 @@ body.menu-open {
         .developer-contact-item i {
             color: var(--primary);
         }
+        
+        /* Animation for electric effect */
+        @keyframes electricPulse {
+            0% { text-shadow: 0 0 5px var(--electric-blue); }
+            50% { text-shadow: 0 0 20px var(--electric-yellow), 0 0 30px var(--electric-blue); }
+            100% { text-shadow: 0 0 5px var(--electric-blue); }
+        }
+        
+        .electric-text {
+            animation: electricPulse 2s infinite;
+        }
+        
+        /* Budget Estimation Styles */
+        .budget-estimation {
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .budget-slider {
+            width: 100%;
+            margin: 10px 0;
+        }
+        
+        .budget-value {
+            font-size: 1.2rem;
+            font-weight: 600;
+            text-align: center;
+            margin-top: 10px;
+            color: var(--primary);
+        }
+        
+        /* Enhanced Responsive Design for Cameras */
+        @media (max-width: 768px) {
+            #camera-preview, #video-recorder {
+                height: 250px;
+            }
+            
+            .camera-controls, .video-controls {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .camera-controls .btn, .video-controls .btn {
+                width: 100%;
+                max-width: 200px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            #camera-preview, #video-recorder {
+                height: 200px;
+            }
+            
+            .camera-switch, .video-switch {
+                width: 35px;
+                height: 35px;
+                font-size: 0.9rem;
+            }
+        }
+        
+        /* RESPONSIVE DESIGN */
+        @media (max-width: 1024px) {
+            .search-box {
+                width: 300px;
+            }
+            
+            .logo {
+                min-width: 160px;
+            }
+            
+            .logo h1 {
+                font-size: 1.6rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-toggle {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            
+            .search-box {
+                width: 200px;
+                margin-right: 5px;
+            }
+            
+            .header-right {
+                gap: 10px;
+            }
+            
+            .logo {
+                min-width: 140px;
+            }
+            
+            .logo h1 {
+                font-size: 1.4rem;
+            }
+            
+            .logo-slogan {
+                font-size: 0.75rem;
+            }
+            
+            .logo-img {
+                width: 45px;
+                height: 45px;
+                font-size: 1.1rem;
+            }
+            
+            .cart-icon {
+                margin-right: 5px;
+                font-size: 1.2rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-menu {
+                display: block;
+            }
+            
+            .hero h2 {
+                font-size: 2.2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .products-grid, .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .product-detail, .service-detail {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .header-content {
+                gap: 15px;
+            }
+            
+            .search-box {
+                width: 150px;
+            }
+            
+            .logo {
+                min-width: 120px;
+            }
+            
+            .logo h1 {
+                font-size: 1.3rem;
+            }
+            
+            .logo-slogan {
+                display: none;
+            }
+            
+            .logo-img {
+                width: 40px;
+                height: 40px;
+                font-size: 1rem;
+                margin-right: 8px;
+            }
+            
+            .hero h2 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 0.9rem;
+            }
+            
+            .form-row {
+                flex-direction: column;
+                gap: 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header-content {
+                gap: 10px;
+            }
+            
+            .search-box {
+                width: 120px;
+            }
+            
+            .search-box input {
+                padding: 10px 15px;
+                font-size: 0.9rem;
+            }
+            
+            .logo {
+                min-width: auto;
+                flex: 1;
+            }
+            
+            .logo h1 {
+                font-size: 1.2rem;
+            }
+            
+            .header-right {
+                gap: 8px;
+            }
+            
+            .cart-icon {
+                margin-right: 3px;
+                padding: 6px;
+                font-size: 1.1rem;
+            }
+            
+            .mobile-toggle {
+                width: 36px;
+                height: 36px;
+                font-size: 1.1rem;
+                margin-right: 5px;
+            }
+            
+            .hero h2 {
+                font-size: 1.8rem;
+            }
+            
+            .hero p {
+                font-size: 0.9rem;
+            }
+            
+            .section-title {
+                font-size: 1.6rem;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .search-box {
+                width: 100px;
+            }
+            
+            .search-box input {
+                padding: 8px 12px;
+                font-size: 0.85rem;
+            }
+            
+            .logo h1 {
+                font-size: 1.1rem;
+            }
+            
+            .logo-img {
+                width: 35px;
+                height: 35px;
+                font-size: 0.9rem;
+                margin-right: 5px;
+            }
+            
+            .header-right {
+                gap: 5px;
+            }
+            
+            .cart-icon {
+                margin-right: 2px;
+            }
+        }
     </style>
 </head>
 <body>
     <!-- Header -->
-  <header>
-    <div class="container">
-        <div class="header-content">
-            <div class="logo">
-                <div class="logo-img">IPS</div>
-                <div class="logo-text">
-                    <h1>Iggy Power Solutions</h1>
-                    <div class="logo-slogan">Powering Your World with Reliable Energy Solutions</div>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-img">IPS</div>
+                    <div class="logo-text">
+                        <h1>Iggy Power Solutions</h1>
+                        <div class="logo-slogan">Powering Your World with Reliable Energy Solutions</div>
+                    </div>
                 </div>
-            </div>
-            
-            <div class="header-right">
-                <div class="search-box">
-                    <input type="text" id="search-input" placeholder="Search products, services...">
-                    <i class="fas fa-search"></i>
-                    <div class="search-results" id="search-results"></div>
+                
+                <div class="header-right">
+                    <div class="search-box">
+                        <input type="text" id="search-input" placeholder="Search products, services...">
+                        <i class="fas fa-search"></i>
+                        <div class="search-results" id="search-results"></div>
+                    </div>
+                    <div class="cart-icon" id="cart-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">0</span>
+                    </div>
+                    <button class="mobile-toggle" id="mobile-toggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
                 </div>
-                <div class="cart-icon" id="cart-icon">
-                    <i class="fas fa-shopping-cart"></i>
-                    <span class="cart-count">0</span>
-                </div>
-                <button class="mobile-toggle" id="mobile-toggle">
-                    <i class="fas fa-bars"></i>
-                </button>
             </div>
         </div>
-    </div>
-</header>
+    </header>
+
     <!-- Navigation -->
     <nav>
         <div class="container">
@@ -2000,26 +1808,32 @@ body.menu-open {
     </nav>
 
     <!-- Mobile Menu -->
-<div class="mobile-menu" id="mobile-menu">
-    <div class="mobile-menu-header">
-        <div class="mobile-menu-logo">
-            <i class="fas fa-bolt"></i>
-            <span>Iggy Power Solutions</span>
+    <div class="mobile-menu" id="mobile-menu">
+        <div class="mobile-menu-header">
+            <div class="mobile-menu-logo">
+                <i class="fas fa-bolt"></i>
+                <span>Iggy Power Solutions</span>
+            </div>
+            <button class="close-menu" id="close-menu">
+                <i class="fas fa-times"></i>
+            </button>
         </div>
-        <button class="close-menu" id="close-menu">
-            <i class="fas fa-times"></i>
-        </button>
+        <ul class="mobile-nav-links">
+            <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="#products"><i class="fas fa-box"></i> Products</a></li>
+            <li><a href="#services"><i class="fas fa-tools"></i> Services</a></li>
+            <li><a href="#gallery"><i class="fas fa-images"></i> Gallery</a></li>
+            <li><a href="#problem-solver"><i class="fas fa-bolt"></i> Problem Solver</a></li>
+            <li><a href="#quotation"><i class="fas fa-file-invoice-dollar"></i> Quotation</a></li>
+            <li><a href="#contact"><i class="fas fa-phone-alt"></i> Contact</a></li>
+        </ul>
     </div>
-    <ul class="mobile-nav-links">
-        <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
-        <li><a href="#products"><i class="fas fa-box"></i> Products</a></li>
-        <li><a href="#services"><i class="fas fa-tools"></i> Services</a></li>
-        <li><a href="#gallery"><i class="fas fa-images"></i> Gallery</a></li>
-        <li><a href="#problem-solver"><i class="fas fa-bolt"></i> Problem Solver</a></li>
-        <li><a href="#quotation"><i class="fas fa-file-invoice-dollar"></i> Quotation</a></li>
-        <li><a href="#contact"><i class="fas fa-phone-alt"></i> Contact</a></li>
-    </ul>
-</div>
+
+    <!-- Notification Toast - Positioned top left -->
+    <div class="toast" id="toast">
+        <i class="fas fa-check-circle"></i>
+        <span id="toast-message">Item added to cart</span>
+    </div>
 
     <!-- Hero Section -->
     <section class="hero" id="home">
@@ -2066,7 +1880,7 @@ body.menu-open {
             </div>
             
             <div class="products-grid">
-                <!-- EDITABLE: Product 1 - Out of Stock -->
+                <!-- Product 1 - Out of Stock -->
                 <div class="product-card" data-category="solar">
                     <div class="product-img">
                         <i class="fas fa-solar-panel"></i>
@@ -2083,7 +1897,7 @@ body.menu-open {
                     </div>
                 </div>
                 
-                <!-- EDITABLE: Product 2 - In Stock -->
+                <!-- Product 2 - In Stock -->
                 <div class="product-card" data-category="inverter">
                     <div class="product-img">
                         <i class="fas fa-bolt"></i>
@@ -2099,7 +1913,7 @@ body.menu-open {
                     </div>
                 </div>
                 
-                <!-- EDITABLE: Product 3 - In Stock -->
+                <!-- Product 3 - In Stock -->
                 <div class="product-card" data-category="battery">
                     <div class="product-img">
                         <i class="fas fa-car-battery"></i>
@@ -2115,7 +1929,7 @@ body.menu-open {
                     </div>
                 </div>
                 
-                <!-- EDITABLE: Product 4 - Out of Stock -->
+                <!-- Product 4 - Out of Stock -->
                 <div class="product-card" data-category="accessories">
                     <div class="product-img">
                         <i class="fas fa-plug"></i>
@@ -2132,7 +1946,7 @@ body.menu-open {
                     </div>
                 </div>
                 
-                <!-- EDITABLE: Product 5 - In Stock -->
+                <!-- Product 5 - In Stock -->
                 <div class="product-card" data-category="solar">
                     <div class="product-img">
                         <i class="fas fa-sun"></i>
@@ -2148,7 +1962,7 @@ body.menu-open {
                     </div>
                 </div>
                 
-                <!-- EDITABLE: Product 6 - Out of Stock -->
+                <!-- Product 6 - Out of Stock -->
                 <div class="product-card" data-category="inverter">
                     <div class="product-img">
                         <i class="fas fa-tachometer-alt"></i>
@@ -2165,8 +1979,37 @@ body.menu-open {
                     </div>
                 </div>
                 
-                <!-- EDITABLE: Add more products here -->
-                <!-- Copy the product-card structure above and modify content -->
+                <!-- Product 7 - In Stock -->
+                <div class="product-card" data-category="accessories">
+                    <div class="product-img">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <div class="product-info">
+                        <h3>LED Solar Street Light</h3>
+                        <p>Bright LED street light with solar panel and motion sensor.</p>
+                        <div class="product-price">KSh 15,500</div>
+                        <div class="product-actions">
+                            <button class="add-to-cart"><i class="fas fa-cart-plus"></i> Add to Cart</button>
+                            <button class="detail-btn" data-product="7"><i class="fas fa-info-circle"></i> Details</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 8 - In Stock -->
+                <div class="product-card" data-category="battery">
+                    <div class="product-img">
+                        <i class="fas fa-car-battery"></i>
+                    </div>
+                    <div class="product-info">
+                        <h3>Gel Battery 100AH</h3>
+                        <p>Maintenance-free gel battery with long lifespan and deep cycle capability.</p>
+                        <div class="product-price">KSh 18,500</div>
+                        <div class="product-actions">
+                            <button class="add-to-cart"><i class="fas fa-cart-plus"></i> Add to Cart</button>
+                            <button class="detail-btn" data-product="8"><i class="fas fa-info-circle"></i> Details</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -2177,7 +2020,7 @@ body.menu-open {
             <h2 class="section-title" style="color: white;">Our Services</h2>
             
             <div class="services-grid">
-                <!-- EDITABLE: Service 1 -->
+                <!-- Service 1 -->
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-solar-panel"></i>
@@ -2191,7 +2034,7 @@ body.menu-open {
                     </div>
                 </div>
                 
-                <!-- EDITABLE: Service 2 -->
+                <!-- Service 2 -->
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-tools"></i>
@@ -2205,7 +2048,7 @@ body.menu-open {
                     </div>
                 </div>
                 
-                <!-- EDITABLE: Service 3 -->
+                <!-- Service 3 -->
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-bolt"></i>
@@ -2219,7 +2062,7 @@ body.menu-open {
                     </div>
                 </div>
                 
-                <!-- EDITABLE: Service 4 -->
+                <!-- Service 4 -->
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-home"></i>
@@ -2233,7 +2076,7 @@ body.menu-open {
                     </div>
                 </div>
                 
-                <!-- EDITABLE: Service 5 -->
+                <!-- Service 5 -->
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-industry"></i>
@@ -2247,7 +2090,7 @@ body.menu-open {
                     </div>
                 </div>
                 
-                <!-- EDITABLE: Service 6 -->
+                <!-- Service 6 -->
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-exclamation-triangle"></i>
@@ -2261,8 +2104,33 @@ body.menu-open {
                     </div>
                 </div>
                 
-                <!-- EDITABLE: Add more services here -->
-                <!-- Copy the service-card structure above and modify content -->
+                <!-- Service 7 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-plug"></i>
+                    </div>
+                    <h3>Backup Power Installation</h3>
+                    <p>Installation of backup power systems including generators and UPS systems.</p>
+                    <div class="service-price">From KSh 80,000</div>
+                    <div class="service-actions">
+                        <button class="btn" data-service="Backup Power Installation"><i class="fab fa-whatsapp"></i> Book Service</button>
+                        <button class="detail-btn" data-service="7">View Details</button>
+                    </div>
+                </div>
+                
+                <!-- Service 8 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-charging-station"></i>
+                    </div>
+                    <h3>EV Charging Station</h3>
+                    <p>Installation of electric vehicle charging stations for homes and businesses.</p>
+                    <div class="service-price">From KSh 95,000</div>
+                    <div class="service-actions">
+                        <button class="btn" data-service="EV Charging Station"><i class="fab fa-whatsapp"></i> Book Service</button>
+                        <button class="detail-btn" data-service="8">View Details</button>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -2280,7 +2148,7 @@ body.menu-open {
             
             <div class="gallery-content active" id="images-tab">
                 <div class="gallery-grid">
-                    <!-- EDITABLE: Gallery Image 1 -->
+                    <!-- Gallery Image 1 -->
                     <div class="gallery-item">
                         <img src="images\solar_panel.jpg" alt="Solar Installation">
                         <div class="gallery-overlay">
@@ -2289,7 +2157,7 @@ body.menu-open {
                         </div>
                     </div>
                     
-                    <!-- EDITABLE: Gallery Image 2 -->
+                    <!-- Gallery Image 2 -->
                     <div class="gallery-item">
                         <img src="images\electrica_ main_tenance.jpg" alt="Electrical Work">
                         <div class="gallery-overlay">
@@ -2298,7 +2166,7 @@ body.menu-open {
                         </div>
                     </div>
                     
-                    <!-- EDITABLE: Gallery Image 3 -->
+                    <!-- Gallery Image 3 -->
                     <div class="gallery-item">
                         <img src="images\WhatsApp_Image.jpg" alt="Inverter Setup">
                         <div class="gallery-overlay">
@@ -2306,25 +2174,12 @@ body.menu-open {
                             <p>Home backup power system setup</p>
                         </div>
                     </div>
-
-
-                     <!-- EDITABLE: Gallery Image 4 -->
-                    <div class="gallery-item">
-                        <img src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80" alt="Inverter Setup">
-                        <div class="gallery-overlay">
-                            <h3>Inverter Installation</h3>
-                            <p>Home backup power system setup</p>
-                        </div>
-                    </div>
-                    
-                    <!-- EDITABLE: Add more gallery images here -->
-                    <!-- Copy the gallery-item structure above and modify content -->
                 </div>
             </div>
             
             <div class="gallery-content" id="videos-tab">
                 <div class="gallery-grid">
-                    <!-- EDITABLE: Video 1 -->
+                    <!-- Video 1 -->
                     <div class="gallery-item">
                         <video controls>
                             <source src="#" type="video/mp4">
@@ -2336,7 +2191,7 @@ body.menu-open {
                         </div>
                     </div>
                     
-                    <!-- EDITABLE: Video 2 -->
+                    <!-- Video 2 -->
                     <div class="gallery-item">
                         <video controls>
                             <source src="#" type="video/mp4">
@@ -2347,34 +2202,28 @@ body.menu-open {
                             <p>Detailed look at our latest products</p>
                         </div>
                     </div>
-                    
-                    <!-- EDITABLE: Add more videos here -->
-                    <!-- Copy the gallery-item structure above and modify content -->
                 </div>
             </div>
             
             <div class="gallery-content" id="projects-tab">
                 <div class="gallery-grid">
-                    <!-- EDITABLE: Project 1 -->
+                    <!-- Project 1 -->
                     <div class="gallery-item">
-                        <img src="https://images.unsplash.com/photo-1548345680-f5475ea5df84?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2073&q=80" alt="Commercial Project">
+                        <img src="images\solar_panel.jpg" alt="Commercial Project">
                         <div class="gallery-overlay">
                             <h3>Commercial Solar Project</h3>
                             <p>50kW solar installation for business</p>
                         </div>
                     </div>
                     
-                    <!-- EDITABLE: Project 2 -->
+                    <!-- Project 2 -->
                     <div class="gallery-item">
-                        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2058&q=80" alt="Residential Project">
+                        <img src="images\WhatsApp_Image.jpg" alt="Residential Project">
                         <div class="gallery-overlay">
                             <h3>Residential Backup System</h3>
                             <p>Complete home power backup solution</p>
                         </div>
                     </div>
-                    
-                    <!-- EDITABLE: Add more projects here -->
-                    <!-- Copy the gallery-item structure above and modify content -->
                 </div>
             </div>
         </div>
@@ -2431,8 +2280,18 @@ body.menu-open {
                         <div id="camera-preview">
                             <video id="video" autoplay></video>
                             <canvas id="canvas" style="display: none;"></canvas>
+                            <button type="button" class="camera-switch" id="camera-switch">
+                                <i class="fas fa-camera-retro"></i>
+                            </button>
                         </div>
-                        <img id="captured-image" alt="Captured Image">
+                        <div class="captured-media-container">
+                            <img id="captured-image" alt="Captured Image">
+                            <div class="media-actions" id="photo-actions" style="display: none;">
+                                <button type="button" class="discard-btn" id="discard-photo">
+                                    <i class="fas fa-trash"></i> Discard
+                                </button>
+                            </div>
+                        </div>
                         <div class="camera-controls">
                             <button type="button" id="start-camera" class="btn"><i class="fas fa-camera"></i> Start Camera</button>
                             <button type="button" id="capture" class="btn btn-secondary" style="display: none;"><i class="fas fa-camera-retro"></i> Capture</button>
@@ -2452,8 +2311,19 @@ body.menu-open {
                                 <i class="fas fa-video fa-2x"></i>
                                 <p>Recording in progress...</p>
                             </div>
+                            <button type="button" class="video-switch" id="video-switch">
+                                <i class="fas fa-camera-retro"></i>
+                            </button>
                         </div>
-                        <div class="camera-controls">
+                        <div class="captured-media-container">
+                            <video id="recorded-video" controls style="display: none;"></video>
+                            <div class="media-actions" id="video-actions" style="display: none;">
+                                <button type="button" class="discard-btn" id="discard-video">
+                                    <i class="fas fa-trash"></i> Discard
+                                </button>
+                            </div>
+                        </div>
+                        <div class="video-controls">
                             <button type="button" id="start-video" class="btn"><i class="fas fa-video"></i> Start Recording</button>
                             <button type="button" id="stop-video" class="btn btn-secondary" style="display: none;"><i class="fas fa-stop"></i> Stop Recording</button>
                         </div>
@@ -2514,6 +2384,8 @@ body.menu-open {
                             <option value="home-electrification">Home Electrification</option>
                             <option value="commercial-solutions">Commercial Solutions</option>
                             <option value="emergency-services">Emergency Services</option>
+                            <option value="backup-power">Backup Power Installation</option>
+                            <option value="ev-charging">EV Charging Station</option>
                             <option value="solar-panel">Solar Panel</option>
                             <option value="inverter">Inverter</option>
                             <option value="battery">Battery</option>
@@ -2526,18 +2398,12 @@ body.menu-open {
                     </div>
                 </div>
                 
-                <div class="form-group">
-                    <label for="quote-budget">Budget Range (Optional)</label>
-                    <div class="custom-dropdown">
-                        <select id="quote-budget">
-                            <option value="">Select budget range</option>
-                            <option value="under-50k">Under KSh 50,000</option>
-                            <option value="50k-100k">KSh 50,000 - 100,000</option>
-                            <option value="100k-250k">KSh 100,000 - 250,000</option>
-                            <option value="250k-500k">KSh 250,000 - 500,000</option>
-                            <option value="over-500k">Over KSh 500,000</option>
-                        </select>
-                    </div>
+                <!-- Budget Estimation Section -->
+                <div class="budget-estimation">
+                    <h3>Budget Estimation</h3>
+                    <p>Use the slider below to indicate your estimated budget range:</p>
+                    <input type="range" min="5000" max="1000000" value="100000" class="budget-slider" id="budget-slider">
+                    <div class="budget-value" id="budget-value">KSh 100,000</div>
                 </div>
                 
                 <div class="form-group">
@@ -2587,7 +2453,7 @@ body.menu-open {
                         </div>
                         <div class="contact-details">
                             <h3>Phone Number</h3>
-                            <p>25410373336</p>
+                            <p>254111923477</p>
                         </div>
                     </div>
                     
@@ -2613,9 +2479,9 @@ body.menu-open {
                     </div>
                     
                     <div class="contact-buttons">
-                        <a href="tel:25410373336" class="btn"><i class="fas fa-phone-alt"></i> Call Now</a>
+                        <a href="tel:254111923477" class="btn"><i class="fas fa-phone-alt"></i> Call Now</a>
                         <a href="mailto:iggysystems@gmail.com" class="btn btn-secondary"><i class="fas fa-envelope"></i> Send Email</a>
-                        <a href="https://wa.me/25410373336" class="btn btn-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                        <a href="https://wa.me/254111923477" class="btn btn-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
                     </div>
                     
                     <!-- Developer Contact Section -->
@@ -2725,7 +2591,7 @@ body.menu-open {
             </div>
             
             <div class="copyright">
-                <p>&copy; 2023 Iggy Power Solutions. All Rights Reserved.</p>
+                <p>&copy;@2025 Iggy Power Solutions.  copyright All Rights Reserved.</p>
             </div>
         </div>
     </footer>
@@ -2901,6 +2767,34 @@ body.menu-open {
                     "Communication: Wi-Fi/RS485"
                 ],
                 inStock: false
+            },
+            7: {
+                name: "LED Solar Street Light",
+                price: "KSh 15,500",
+                description: "Bright LED street light with solar panel and motion sensor. Perfect for outdoor lighting.",
+                icon: "fas fa-lightbulb",
+                specs: [
+                    "Luminous Flux: 6000LM",
+                    "Power: 60W",
+                    "Battery: Lithium 12.8V/40AH",
+                    "Solar Panel: 80W Monocrystalline",
+                    "Motion Sensor: Yes"
+                ],
+                inStock: true
+            },
+            8: {
+                name: "Gel Battery 100AH",
+                price: "KSh 18,500",
+                description: "Maintenance-free gel battery with long lifespan and deep cycle capability.",
+                icon: "fas fa-car-battery",
+                specs: [
+                    "Capacity: 100AH",
+                    "Type: Gel Deep Cycle",
+                    "Voltage: 12V",
+                    "Lifespan: 8-10 years",
+                    "Maintenance: Free"
+                ],
+                inStock: true
             }
         };
 
@@ -2983,85 +2877,155 @@ body.menu-open {
                     "Safety hazard mitigation",
                     "Complete restoration"
                 ]
+            },
+            7: {
+                name: "Backup Power Installation",
+                price: "From KSh 80,000",
+                description: "Installation of backup power systems including generators and UPS systems.",
+                icon: "fas fa-plug",
+                features: [
+                    "System design and planning",
+                    "Generator installation",
+                    "UPS system setup",
+                    "Automatic transfer switch",
+                    "Testing and commissioning"
+                ]
+            },
+            8: {
+                name: "EV Charging Station",
+                price: "From KSh 95,000",
+                description: "Installation of electric vehicle charging stations for homes and businesses.",
+                icon: "fas fa-charging-station",
+                features: [
+                    "Site assessment",
+                    "Charging station installation",
+                    "Electrical connection",
+                    "Safety testing",
+                    "User training"
+                ]
             }
         };
 
-   // Mobile Menu Functionality
-const mobileToggle = document.getElementById('mobile-toggle');
-const mobileMenu = document.getElementById('mobile-menu');
-const closeMenu = document.getElementById('close-menu');
-const mobileNavLinks = document.querySelectorAll('.mobile-nav-links a');
+        // Notification Toast Function
+        function showToast(message, type = 'success') {
+            const toast = document.getElementById('toast');
+            const toastMessage = document.getElementById('toast-message');
+            
+            toastMessage.textContent = message;
+            toast.className = 'toast';
+            toast.classList.add(type);
+            toast.classList.add('show');
+            
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
 
-// Open mobile menu
-mobileToggle.addEventListener('click', function() {
-    mobileMenu.classList.add('active');
-    document.body.style.overflow = 'hidden'; // Prevent background scrolling
-});
+        // Mobile Menu Functionality
+        const mobileToggle = document.getElementById('mobile-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const closeMenu = document.getElementById('close-menu');
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav-links a');
 
-// Close mobile menu
-closeMenu.addEventListener('click', function() {
-    mobileMenu.classList.remove('active');
-    document.body.style.overflow = ''; // Restore scrolling
-});
+        // Open mobile menu
+        mobileToggle.addEventListener('click', function(e) {
+            e.stopPropagation(); // Prevent event bubbling
+            mobileMenu.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
 
-// Close menu when clicking on links
-mobileNavLinks.forEach(link => {
-    link.addEventListener('click', function() {
-        mobileMenu.classList.remove('active');
-        document.body.style.overflow = '';
-    });
-});
-
-// Close menu when clicking outside
-mobileMenu.addEventListener('click', function(e) {
-    if (e.target === mobileMenu) {
-        mobileMenu.classList.remove('active');
-        document.body.style.overflow = '';
-    }
-});
-
-// Smooth scrolling for mobile menu links
-mobileNavLinks.forEach(link => {
-    link.addEventListener('click', function(e) {
-        e.preventDefault();
-        
-        const targetId = this.getAttribute('href');
-        if (targetId === '#') return;
-        
-        const targetElement = document.querySelector(targetId);
-        if (targetElement) {
-            // Close menu first
+        // Close mobile menu
+        closeMenu.addEventListener('click', function(e) {
+            e.stopPropagation();
             mobileMenu.classList.remove('active');
             document.body.style.overflow = '';
-            
-            // Then scroll to target
-            setTimeout(() => {
-                targetElement.scrollIntoView({
-                    behavior: 'smooth'
-                });
-            }, 300);
-        }
-    });
-});
-        // Camera Functionality for Problem Solver
+        });
+
+        // Close menu when clicking on links
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                mobileMenu.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(e) {
+            if (mobileMenu.classList.contains('active') && 
+                !mobileMenu.contains(e.target) && 
+                e.target !== mobileToggle) {
+                mobileMenu.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+
+        // Close menu with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
+                mobileMenu.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+
+        // Enhanced Camera Functionality for Problem Solver
         const startCamera = document.getElementById('start-camera');
         const video = document.getElementById('video');
         const canvas = document.getElementById('canvas');
         const capture = document.getElementById('capture');
         const retake = document.getElementById('retake');
         const capturedImage = document.getElementById('captured-image');
+        const cameraSwitch = document.getElementById('camera-switch');
+        const discardPhoto = document.getElementById('discard-photo');
+        const photoActions = document.getElementById('photo-actions');
         
         let stream = null;
+        let usingFrontCamera = false;
 
         startCamera.addEventListener('click', async function() {
             try {
-                stream = await navigator.mediaDevices.getUserMedia({ video: true });
+                const constraints = {
+                    video: { 
+                        facingMode: usingFrontCamera ? "user" : "environment",
+                        width: { ideal: 1280 },
+                        height: { ideal: 720 }
+                    }
+                };
+                
+                stream = await navigator.mediaDevices.getUserMedia(constraints);
                 video.srcObject = stream;
                 startCamera.style.display = 'none';
                 capture.style.display = 'inline-block';
+                retake.style.display = 'none';
+                capturedImage.style.display = 'none';
+                photoActions.style.display = 'none';
             } catch (err) {
                 console.error("Error accessing camera: ", err);
                 alert("Unable to access camera. Please check permissions.");
+            }
+        });
+
+        // Camera switch functionality
+        cameraSwitch.addEventListener('click', async function() {
+            if (stream) {
+                stream.getTracks().forEach(track => track.stop());
+            }
+            
+            usingFrontCamera = !usingFrontCamera;
+            
+            try {
+                const constraints = {
+                    video: { 
+                        facingMode: usingFrontCamera ? "user" : "environment",
+                        width: { ideal: 1280 },
+                        height: { ideal: 720 }
+                    }
+                };
+                
+                stream = await navigator.mediaDevices.getUserMedia(constraints);
+                video.srcObject = stream;
+            } catch (err) {
+                console.error("Error switching camera: ", err);
+                alert("Unable to switch camera. Please check permissions.");
             }
         });
 
@@ -3078,6 +3042,7 @@ mobileNavLinks.forEach(link => {
             // Show captured image
             capturedImage.src = canvas.toDataURL('image/png');
             capturedImage.style.display = 'block';
+            photoActions.style.display = 'flex';
             video.style.display = 'none';
             capture.style.display = 'none';
             retake.style.display = 'inline-block';
@@ -3085,25 +3050,65 @@ mobileNavLinks.forEach(link => {
 
         retake.addEventListener('click', function() {
             capturedImage.style.display = 'none';
+            photoActions.style.display = 'none';
             video.style.display = 'block';
             retake.style.display = 'none';
             startCamera.style.display = 'inline-block';
             capturedImage.src = '';
+            
+            // Restart camera
+            startCamera.click();
         });
 
-        // Video Recording Functionality
+        // Discard photo functionality
+        discardPhoto.addEventListener('click', function() {
+            capturedImage.style.display = 'none';
+            photoActions.style.display = 'none';
+            capturedImage.src = '';
+            startCamera.style.display = 'inline-block';
+            capture.style.display = 'none';
+            retake.style.display = 'none';
+            
+            // Stop any active stream
+            if (stream) {
+                stream.getTracks().forEach(track => track.stop());
+                stream = null;
+            }
+        });
+
+        // Enhanced Video Recording Functionality
         const startVideo = document.getElementById('start-video');
         const stopVideo = document.getElementById('stop-video');
         const videoPreview = document.getElementById('video-preview');
+        const recordedVideo = document.getElementById('recorded-video');
         const videoRecordingMessage = document.getElementById('video-recording-message');
+        const videoSwitch = document.getElementById('video-switch');
+        const discardVideo = document.getElementById('discard-video');
+        const videoActions = document.getElementById('video-actions');
         
         let mediaRecorder = null;
         let recordedChunks = [];
+        let usingFrontCameraVideo = false;
+        let videoStream = null;
 
         startVideo.addEventListener('click', async function() {
             try {
-                const stream = await navigator.mediaDevices.getUserMedia({ video: true, audio: true });
-                mediaRecorder = new MediaRecorder(stream);
+                const constraints = {
+                    video: { 
+                        facingMode: usingFrontCameraVideo ? "user" : "environment",
+                        width: { ideal: 1280 },
+                        height: { ideal: 720 }
+                    },
+                    audio: true
+                };
+                
+                videoStream = await navigator.mediaDevices.getUserMedia(constraints);
+                videoPreview.srcObject = videoStream;
+                videoPreview.style.display = 'block';
+                recordedVideo.style.display = 'none';
+                videoActions.style.display = 'none';
+                
+                mediaRecorder = new MediaRecorder(videoStream);
                 
                 mediaRecorder.ondataavailable = function(event) {
                     if (event.data.size > 0) {
@@ -3114,12 +3119,14 @@ mobileNavLinks.forEach(link => {
                 mediaRecorder.onstop = function() {
                     const blob = new Blob(recordedChunks, { type: 'video/webm' });
                     const url = URL.createObjectURL(blob);
-                    videoPreview.src = url;
-                    videoPreview.style.display = 'block';
+                    recordedVideo.src = url;
+                    recordedVideo.style.display = 'block';
+                    videoActions.style.display = 'flex';
+                    videoPreview.style.display = 'none';
                     videoRecordingMessage.style.display = 'none';
                     
                     // Stop all tracks
-                    stream.getTracks().forEach(track => track.stop());
+                    videoStream.getTracks().forEach(track => track.stop());
                 };
                 
                 recordedChunks = [];
@@ -3134,6 +3141,48 @@ mobileNavLinks.forEach(link => {
             }
         });
 
+        // Video camera switch functionality
+        videoSwitch.addEventListener('click', async function() {
+            if (mediaRecorder && mediaRecorder.state === 'recording') {
+                mediaRecorder.stop();
+            }
+            
+            if (videoStream) {
+                videoStream.getTracks().forEach(track => track.stop());
+            }
+            
+            usingFrontCameraVideo = !usingFrontCameraVideo;
+            
+            try {
+                const constraints = {
+                    video: { 
+                        facingMode: usingFrontCameraVideo ? "user" : "environment",
+                        width: { ideal: 1280 },
+                        height: { ideal: 720 }
+                    },
+                    audio: true
+                };
+                
+                videoStream = await navigator.mediaDevices.getUserMedia(constraints);
+                videoPreview.srcObject = videoStream;
+                
+                if (mediaRecorder && mediaRecorder.state === 'inactive') {
+                    mediaRecorder = new MediaRecorder(videoStream);
+                    
+                    mediaRecorder.ondataavailable = function(event) {
+                        if (event.data.size > 0) {
+                            recordedChunks.push(event.data);
+                        }
+                    };
+                    
+                    mediaRecorder.start();
+                }
+            } catch (err) {
+                console.error("Error switching video camera: ", err);
+                alert("Unable to switch camera. Please check permissions.");
+            }
+        });
+
         stopVideo.addEventListener('click', function() {
             if (mediaRecorder && mediaRecorder.state !== 'inactive') {
                 mediaRecorder.stop();
@@ -3142,13 +3191,41 @@ mobileNavLinks.forEach(link => {
             }
         });
 
+        // Discard video functionality
+        discardVideo.addEventListener('click', function() {
+            recordedVideo.style.display = 'none';
+            videoActions.style.display = 'none';
+            recordedVideo.src = '';
+            startVideo.style.display = 'inline-block';
+            stopVideo.style.display = 'none';
+            
+            // Stop any active stream
+            if (videoStream) {
+                videoStream.getTracks().forEach(track => track.stop());
+                videoStream = null;
+            }
+            
+            if (mediaRecorder && mediaRecorder.state === 'recording') {
+                mediaRecorder.stop();
+            }
+        });
+
+        // Budget Estimation Slider
+        const budgetSlider = document.getElementById('budget-slider');
+        const budgetValue = document.getElementById('budget-value');
+
+        budgetSlider.addEventListener('input', function() {
+            const value = parseInt(this.value);
+            budgetValue.textContent = `KSh ${value.toLocaleString()}`;
+        });
+
         // WhatsApp Integration for Notify Me buttons
         document.querySelectorAll('.notify-btn').forEach(button => {
             button.addEventListener('click', function() {
                 const productName = this.getAttribute('data-product');
                 const message = `*Iggy Power Solutions - Product Notification*\n\nHello, I'm interested in the ${productName}. Please notify me when it's back in stock.`;
                 const encodedMessage = encodeURIComponent(message);
-                const whatsappUrl = `https://wa.me/25410373336?text=${encodedMessage}`;
+                const whatsappUrl = `https://wa.me/254111923477?text=${encodedMessage}`;
                 window.open(whatsappUrl, '_blank');
             });
         });
@@ -3159,7 +3236,7 @@ mobileNavLinks.forEach(link => {
                 const serviceName = this.getAttribute('data-service');
                 const message = `*Iggy Power Solutions - Service Booking*\n\nHello, I would like to book the ${serviceName} service. Please provide more details.`;
                 const encodedMessage = encodeURIComponent(message);
-                const whatsappUrl = `https://wa.me/25410373336?text=${encodedMessage}`;
+                const whatsappUrl = `https://wa.me/254111923477?text=${encodedMessage}`;
                 window.open(whatsappUrl, '_blank');
             });
         });
@@ -3183,7 +3260,7 @@ mobileNavLinks.forEach(link => {
             message += `\nPlease help me solve this electrical problem.`;
             
             const encodedMessage = encodeURIComponent(message);
-            const whatsappUrl = `https://wa.me/25410373336?text=${encodedMessage}`;
+            const whatsappUrl = `https://wa.me/254111923477?text=${encodedMessage}`;
             window.open(whatsappUrl, '_blank');
         });
 
@@ -3194,7 +3271,7 @@ mobileNavLinks.forEach(link => {
             const quotePhone = document.getElementById('quote-phone').value;
             const quoteLocation = document.getElementById('quote-location').value;
             const quoteType = document.getElementById('quote-type').value;
-            const quoteBudget = document.getElementById('quote-budget').value;
+            const quoteBudget = document.getElementById('budget-slider').value;
             const quoteTimeline = document.getElementById('quote-timeline').value;
             const quoteDetails = document.getElementById('quote-details').value;
             
@@ -3204,16 +3281,14 @@ mobileNavLinks.forEach(link => {
             message += `Phone: ${quotePhone || 'Not provided'}\n`;
             message += `Location: ${quoteLocation || 'Not provided'}\n`;
             message += `Service/Product: ${quoteType || 'Not specified'}\n`;
-            if (quoteBudget) {
-                message += `Budget: ${quoteBudget}\n`;
-            }
+            message += `Estimated Budget: KSh ${parseInt(quoteBudget).toLocaleString()}\n`;
             if (quoteTimeline) {
                 message += `Timeline: ${quoteTimeline}\n`;
             }
             message += `Details: ${quoteDetails || 'Not provided'}\n`;
             
             const encodedMessage = encodeURIComponent(message);
-            const whatsappUrl = `https://wa.me/25410373336?text=${encodedMessage}`;
+            const whatsappUrl = `https://wa.me/254111923477?text=${encodedMessage}`;
             window.open(whatsappUrl, '_blank');
         });
 
@@ -3231,7 +3306,7 @@ mobileNavLinks.forEach(link => {
             message += `Message: ${contactMessage || 'Not provided'}\n`;
             
             const encodedMessage = encodeURIComponent(message);
-            const whatsappUrl = `https://wa.me/25410373336?text=${encodedMessage}`;
+            const whatsappUrl = `https://wa.me/254111923477?text=${encodedMessage}`;
             window.open(whatsappUrl, '_blank');
         });
 
@@ -3297,15 +3372,15 @@ mobileNavLinks.forEach(link => {
                 updateCartCount();
                 updateCartDisplay();
                 
-                // Show confirmation
-                alert(`${productName} added to cart!`);
+                // Show notification
+                showToast(`${productName} added to cart!`, 'success');
             });
         });
 
         // Checkout functionality
         checkoutBtn.addEventListener('click', function() {
             if (cart.length === 0) {
-                alert('Your cart is empty!');
+                showToast('Your cart is empty!', 'warning');
                 return;
             }
             
@@ -3321,7 +3396,7 @@ mobileNavLinks.forEach(link => {
             message += `Please confirm availability and provide payment details.`;
             
             const encodedMessage = encodeURIComponent(message);
-            const whatsappUrl = `https://wa.me/25410373336?text=${encodedMessage}`;
+            const whatsappUrl = `https://wa.me/254111923477?text=${encodedMessage}`;
             window.open(whatsappUrl, '_blank');
             
             // Clear cart after checkout
@@ -3329,6 +3404,8 @@ mobileNavLinks.forEach(link => {
             updateCartCount();
             updateCartDisplay();
             cartModal.style.display = 'none';
+            
+            showToast('Order placed successfully!', 'success');
         });
 
         function updateCartCount() {
@@ -3383,6 +3460,7 @@ mobileNavLinks.forEach(link => {
                         cart[index].quantity -= 1;
                         updateCartDisplay();
                         updateCartCount();
+                        showToast(`${cart[index].name} quantity decreased`, 'success');
                     }
                 });
             });
@@ -3393,15 +3471,18 @@ mobileNavLinks.forEach(link => {
                     cart[index].quantity += 1;
                     updateCartDisplay();
                     updateCartCount();
+                    showToast(`${cart[index].name} quantity increased`, 'success');
                 });
             });
             
             document.querySelectorAll('.remove-item').forEach(button => {
                 button.addEventListener('click', function() {
                     const index = parseInt(this.getAttribute('data-index'));
+                    const itemName = cart[index].name;
                     cart.splice(index, 1);
                     updateCartDisplay();
                     updateCartCount();
+                    showToast(`${itemName} removed from cart`, 'error');
                 });
             });
         }
@@ -3503,7 +3584,7 @@ mobileNavLinks.forEach(link => {
                                 updateCartCount();
                                 updateCartDisplay();
                                 productModal.style.display = 'none';
-                                alert(`${product.name} added to cart!`);
+                                showToast(`${product.name} added to cart!`, 'success');
                             });
                             actionsContainer.appendChild(addToCartBtn);
                         } else {
@@ -3514,7 +3595,7 @@ mobileNavLinks.forEach(link => {
                             notifyBtn.addEventListener('click', function() {
                                 const message = `*Iggy Power Solutions - Product Notification*\n\nHello, I'm interested in the ${product.name}. Please notify me when it's back in stock.`;
                                 const encodedMessage = encodeURIComponent(message);
-                                const whatsappUrl = `https://wa.me/25410373336?text=${encodedMessage}`;
+                                const whatsappUrl = `https://wa.me/254111923477?text=${encodedMessage}`;
                                 window.open(whatsappUrl, '_blank');
                             });
                             actionsContainer.appendChild(notifyBtn);
@@ -3557,7 +3638,7 @@ mobileNavLinks.forEach(link => {
             const serviceName = this.getAttribute('data-service');
             const message = `*Iggy Power Solutions - Service Booking*\n\nHello, I would like to book the ${serviceName} service. Please provide more details.`;
             const encodedMessage = encodeURIComponent(message);
-            const whatsappUrl = `https://wa.me/25410373336?text=${encodedMessage}`;
+            const whatsappUrl = `https://wa.me/254111923477?text=${encodedMessage}`;
             window.open(whatsappUrl, '_blank');
         });
 
@@ -3704,7 +3785,7 @@ mobileNavLinks.forEach(link => {
                                         updateCartCount();
                                         updateCartDisplay();
                                         productModal.style.display = 'none';
-                                        alert(`${product.name} added to cart!`);
+                                        showToast(`${product.name} added to cart!`, 'success');
                                     });
                                     actionsContainer.appendChild(addToCartBtn);
                                 } else {
@@ -3715,7 +3796,7 @@ mobileNavLinks.forEach(link => {
                                     notifyBtn.addEventListener('click', function() {
                                         const message = `*Iggy Power Solutions - Product Notification*\n\nHello, I'm interested in the ${product.name}. Please notify me when it's back in stock.`;
                                         const encodedMessage = encodeURIComponent(message);
-                                        const whatsappUrl = `https://wa.me/25410373336?text=${encodedMessage}`;
+                                        const whatsappUrl = `https://wa.me/254111923477?text=${encodedMessage}`;
                                         window.open(whatsappUrl, '_blank');
                                     });
                                     actionsContainer.appendChild(notifyBtn);
@@ -3801,9 +3882,6 @@ mobileNavLinks.forEach(link => {
                     targetElement.scrollIntoView({
                         behavior: 'smooth'
                     });
-                    
-                    // Close mobile menu if open
-                    document.getElementById('nav-links').classList.remove('active');
                 }
             });
         });
